@@ -1,0 +1,136 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.whut.map:map-service >----------------------
+[INFO] Building map-service 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.5.11:run (default-cli) > test-compile @ map-service >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ map-service ---
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] Copying 9 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ map-service ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ map-service ---
+[INFO] Copying 3 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ map-service ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:3.5.11:run (default-cli) < test-compile @ map-service <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.5.11:run (default-cli) @ map-service ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.11)
+
+2026-10-15T17:50:44.827+08:00  INFO 42243 --- [map-service] [           main] c.w.m.map_service.MapServiceApplication  : Starting MapServiceApplication using Java 21.0.11 with PID 42243 (/Users/roseseal/workspace/flagship-projects/map-system/backend/map-service/target/classes started by roseseal in /Users/roseseal/workspace/flagship-projects/map-system/backend/map-service)
+2026-10-15T17:50:44.828+08:00 DEBUG 42243 --- [map-service] [           main] c.w.m.map_service.MapServiceApplication  : Running with Spring Boot v3.5.11, Spring v6.2.16
+2026-10-15T17:50:44.828+08:00  INFO 42243 --- [map-service] [           main] c.w.m.map_service.MapServiceApplication  : The following 1 profile is active: "local"
+2026-10-15T17:50:45.085+08:00  INFO 42243 --- [map-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-15T17:50:45.096+08:00  INFO 42243 --- [map-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2026-10-15T17:50:45.296+08:00  INFO 42243 --- [map-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 18082 (http)
+2026-10-15T17:50:45.301+08:00  INFO 42243 --- [map-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-15T17:50:45.301+08:00  INFO 42243 --- [map-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-10-15T17:50:45.318+08:00  INFO 42243 --- [map-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-15T17:50:45.318+08:00  INFO 42243 --- [map-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 477 ms
+2026-10-15T17:50:45.369+08:00  INFO 42243 --- [map-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-15T17:50:45.389+08:00  INFO 42243 --- [map-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.42.Final
+2026-10-15T17:50:45.392+08:00  INFO 42243 --- [map-service] [           main] o.h.spatial.integration.SpatialService   : HHH80000001: hibernate-spatial integration enabled : true
+2026-10-15T17:50:45.400+08:00  INFO 42243 --- [map-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-10-15T17:50:45.441+08:00  INFO 42243 --- [map-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-15T17:50:45.544+08:00  INFO 42243 --- [map-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6f0c45f4
+2026-10-15T17:50:45.545+08:00  INFO 42243 --- [map-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-15T17:50:45.583+08:00  WARN 42243 --- [map-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-15T17:50:45.591+08:00  INFO 42243 --- [map-service] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-15T17:50:45.596+08:00  INFO 42243 --- [map-service] [           main] org.hibernate.spatial                    : HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2026-10-15T17:50:45.657+08:00  INFO 42243 --- [map-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-15T17:50:45.664+08:00  INFO 42243 --- [map-service] [           main] org.hibernate.spatial                    : HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2026-10-15T17:50:45.712+08:00  INFO 42243 --- [map-service] [           main] org.hibernate.spatial                    : HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2026-10-15T17:50:45.772+08:00  INFO 42243 --- [map-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-15T17:50:45.773+08:00  INFO 42243 --- [map-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-15T17:50:45.872+08:00  INFO 42243 --- [map-service] [           main] c.w.m.m.llm.config.GeminiConfig          : Gemini client initialized with proxy http://127.0.0.1:7897.
+2026-10-15T17:50:45.880+08:00  INFO 42243 --- [map-service] [           main] ai.z.openapi.AbstractAiClient            : ZAI Init the client: ZhipuAiClient, baseUrl: http://127.0.0.1:18766/api/paas/v4/
+2026-10-15T17:50:45.907+08:00  INFO 42243 --- [map-service] [           main] c.w.m.m.l.agent.graph.MemoryGraphLoader  : COLREGS graph loaded: 16 rules, 6 actions from classpath:colregs/rules.json
+2026-10-15T17:50:46.259+08:00  INFO 42243 --- [map-service] [           main] c.w.m.m.source.ais.config.MqttConfig     : MQTT client connected to broker: tcp://localhost:1883, subscribed to topic: forensics/20261015/nothink12
+2026-10-15T17:50:46.583+08:00  INFO 42243 --- [map-service] [           main] c.w.m.m.s.w.config.WeatherMqttConfig     : Weather MQTT client connected to broker: tcp://localhost:1883, subscribed to topic: usv/Weather
+2026-10-15T17:50:46.732+08:00  INFO 42243 --- [map-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 18082 (http) with context path '/'
+2026-10-15T17:50:46.736+08:00  INFO 42243 --- [map-service] [           main] c.w.m.map_service.MapServiceApplication  : Started MapServiceApplication in 2.032 seconds (process running for 2.135)
+2026-10-15T17:50:47.023+08:00 DEBUG 42243 --- [map-service] [02-a1e502883a62] c.w.m.m.s.ais.mqtt.AisMessageListener    : payload: {"MSGTIME": "2026-10-15 17:50:47", "MMSI": "123456789", "LAT": 30.578, "LON": 114.200062, "SOG": 11.5, "COG": 90.0, "HEADING": 90.0}
+2026-10-15T17:50:47.037+08:00 DEBUG 42243 --- [map-service] [02-a1e502883a62] c.w.m.m.s.ais.mqtt.AisMessageMapper      : Parsed MMSI: 123456789
+2026-10-15T17:50:47.038+08:00 DEBUG 42243 --- [map-service] [02-a1e502883a62] c.w.m.m.s.ais.mqtt.AisMessageListener    : 已解析Ais数据: ShipStatus(id=ownShip, role=OWN_SHIP, longitude=114.200062, latitude=30.578, sog=11.5, cog=90.0, heading=90.0, msgTime=2026-10-15T17:50:47+08:00, confidence=0.95, qualityFlags=[])
+2026-10-15T17:50:47.039+08:00 DEBUG 42243 --- [map-service] [02-a1e502883a62] c.w.m.m.r.e.safety.ShipDomainEngine      : Received AIS message for ship domain calculation, MMSI: ownShip
+2026-10-15T17:50:47.053+08:00  WARN 42243 --- [map-service] [02-a1e502883a62] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: PreparedStatementCallback; bad SQL grammar [SELECT "DRVAL1"
+FROM enc_depare
+WHERE ST_Intersects(
+    geometry,
+    ST_SetSRID(ST_MakePoint(?, ?), 4326)
+)
+ORDER BY "DRVAL1" ASC NULLS LAST
+LIMIT 1
+]
+2026-10-15T17:50:47.053+08:00  INFO 42243 --- [map-service] [02-a1e502883a62] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=14ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=14ms, Publish=0ms, Targets=0, Role=OWN_SHIP
+2026-10-15T17:50:47.054+08:00 DEBUG 42243 --- [map-service] [02-a1e502883a62] c.w.m.m.s.ais.mqtt.AisMessageListener    : payload: {"MSGTIME": "2026-10-15 17:50:47", "MMSI": "900001222", "LAT": 30.578199, "LON": 114.231941, "SOG": 11.0, "COG": 269.3, "HEADING": 269.3}
+2026-10-15T17:50:47.054+08:00 DEBUG 42243 --- [map-service] [02-a1e502883a62] c.w.m.m.s.ais.mqtt.AisMessageMapper      : Parsed MMSI: 900001222
+2026-10-15T17:50:47.054+08:00 DEBUG 42243 --- [map-service] [02-a1e502883a62] c.w.m.m.s.ais.mqtt.AisMessageListener    : 已解析Ais数据: ShipStatus(id=900001222, role=TARGET_SHIP, longitude=114.231941, latitude=30.578199, sog=11.0, cog=269.3, heading=269.3, msgTime=2026-10-15T17:50:47+08:00, confidence=0.95, qualityFlags=[])
+2026-10-15T17:50:47.054+08:00 DEBUG 42243 --- [map-service] [02-a1e502883a62] c.w.m.m.r.e.safety.ShipDomainEngine      : Received AIS message for ship domain calculation, MMSI: ownShip
+2026-10-15T17:50:47.054+08:00 DEBUG 42243 --- [map-service] [02-a1e502883a62] c.w.m.m.r.e.t.CvPredictionEngine         : CV prediction for target MMSI: 900001222
+2026-10-15T17:50:47.056+08:00  WARN 42243 --- [map-service] [02-a1e502883a62] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: PreparedStatementCallback; bad SQL grammar [SELECT "DRVAL1"
+FROM enc_depare
+WHERE ST_Intersects(
+    geometry,
+    ST_SetSRID(ST_MakePoint(?, ?), 4326)
+)
+ORDER BY "DRVAL1" ASC NULLS LAST
+LIMIT 1
+]
+2026-10-15T17:50:47.056+08:00  INFO 42243 --- [map-service] [02-a1e502883a62] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=2ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1ms, Publish=0ms, Targets=1, Role=TARGET_SHIP
+2026-10-15T17:50:47.056+08:00 DEBUG 42243 --- [map-service] [02-a1e502883a62] c.w.m.m.risk.pipeline.ShipDispatcher     : CPA=4.0m, TCPA=262.0s, target=900001222
+2026-10-15T17:50:47.067+08:00 DEBUG 42243 --- [map-service] [tream-publisher] c.w.m.m.llm.service.LlmTriggerService    : Skipping LLM explanation because no target context is available
+2026-10-15T17:50:47.072+08:00 DEBUG 42243 --- [map-service] [tream-publisher] c.w.m.m.llm.service.LlmTriggerService    : Skipping LLM explanation because no targets passed the trigger filter
+2026-10-15T17:50:47.896+08:00 DEBUG 42243 --- [map-service] [     virtual-64] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=1 tool=get_risk_snapshot callId=call_-7180535060863379259
+2026-10-15T17:50:48.714+08:00 DEBUG 42243 --- [map-service] [     virtual-64] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=2 tool=get_top_risk_targets callId=call_-7180568389809599774
+2026-10-15T17:50:49.524+08:00 DEBUG 42243 --- [map-service] [     virtual-64] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=3 tool=get_target_detail callId=call_-7166215708617995948
+2026-10-15T17:50:50.344+08:00 DEBUG 42243 --- [map-service] [     virtual-64] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=4 tool=get_own_ship_state callId=call_-7180538634276174336
+2026-10-15T17:50:50.345+08:00 DEBUG 42243 --- [map-service] [     virtual-64] c.w.m.m.r.e.safety.ShipDomainEngine      : Received AIS message for ship domain calculation, MMSI: ownShip
+2026-10-15T17:50:51.009+08:00 DEBUG 42243 --- [map-service] [     virtual-64] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=5 tool=get_weather_context callId=call_-7180517571756550977
+2026-10-15T17:50:52.185+08:00 DEBUG 42243 --- [map-service] [     virtual-64] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=6 tool=evaluate_maneuver callId=call_-7180526883245652026
+2026-10-15T17:50:52.941+08:00 DEBUG 42243 --- [map-service] [     virtual-64] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=7 tool=query_regulatory_context callId=call_-7180552584329950644
+2026-10-15T17:50:53.976+08:00 DEBUG 42243 --- [map-service] [     virtual-64] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=8 tool=evaluate_maneuver callId=call_-7180519358462946580
+2026-10-15T17:50:58.950+08:00  INFO 42243 --- [map-service] [     virtual-64] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory published: id=3012aef7-44dc-42c1-8839-5c2e42706c72 supersedes=null riskLevel=WARNING
+2026-10-15T17:50:59.063+08:00  INFO 42243 --- [map-service] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-15T17:50:59.073+08:00  INFO 42243 --- [map-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-10-15T17:50:59.079+08:00  INFO 42243 --- [map-service] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-15T17:50:59.081+08:00  INFO 42243 --- [map-service] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-15T17:50:59.083+08:00  INFO 42243 --- [map-service] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  15.637 s
+[INFO] Finished at: 2026-10-15T17:50:59+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.5.11:run (default-cli) on project map-service: Process terminated with exit code: 143 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

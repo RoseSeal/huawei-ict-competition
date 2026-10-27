@@ -1,0 +1,26 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "",
+        "reasoning_content": "\n<think>\n<tool_call>query_regulatory_context\n<arg_key>target_id</arg_key>\n<arg_value>900001222</arg_value>\n</tool_call>",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1792056933,
+  "id": "202610151735329369c1cb2ec24796",
+  "model": "glm-4.5-air",
+  "object": "chat.completion",
+  "request_id": "202610151735329369c1cb2ec24796",
+  "usage": {
+    "completion_tokens": 23,
+    "prompt_tokens": 3696,
+    "prompt_tokens_details": {
+      "cached_tokens": 3470
+    },
+    "total_tokens": 3719
+  }
+}

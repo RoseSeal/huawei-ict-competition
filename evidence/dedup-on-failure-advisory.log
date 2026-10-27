@@ -1,0 +1,15 @@
+2026-10-16T15:55:19.103+08:00  INFO 57469 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900001222] snapshot=2
+2026-10-16T15:55:19.423+08:00  WARN 57469 --- [map-service] [     virtual-64] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory provider failed: LLM_REQUEST_FAILED - Zhipu request failed: Call Failed
+2026-10-16T15:55:19.424+08:00  INFO 57469 --- [map-service] [     virtual-64] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900001222 delayMs=30000
+2026-10-16T15:55:50.189+08:00  INFO 57469 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900001222] snapshot=63
+2026-10-16T15:55:50.452+08:00  WARN 57469 --- [map-service] [     virtual-78] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory provider failed: LLM_REQUEST_FAILED - Zhipu request failed: Call Failed
+2026-10-16T15:55:50.452+08:00  INFO 57469 --- [map-service] [     virtual-78] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900001222 delayMs=60000
+2026-10-16T15:56:51.445+08:00  INFO 57469 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900001222] snapshot=185
+2026-10-16T15:56:51.709+08:00  WARN 57469 --- [map-service] [     virtual-79] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory provider failed: LLM_REQUEST_FAILED - Zhipu request failed: Call Failed
+2026-10-16T15:56:51.709+08:00  INFO 57469 --- [map-service] [     virtual-79] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900001222 delayMs=120000
+2026-10-16T15:58:27.867+08:00  INFO 57469 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900001222] snapshot=378
+2026-10-16T15:58:28.129+08:00  WARN 57469 --- [map-service] [     virtual-81] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory provider failed: LLM_REQUEST_FAILED - Zhipu request failed: Call Failed
+2026-10-16T15:58:28.129+08:00  INFO 57469 --- [map-service] [     virtual-81] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900001222 delayMs=30000
+2026-10-16T15:58:58.973+08:00  INFO 57469 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900001222] snapshot=439
+2026-10-16T15:58:59.240+08:00  WARN 57469 --- [map-service] [     virtual-84] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory provider failed: LLM_REQUEST_FAILED - Zhipu request failed: Call Failed
+2026-10-16T15:58:59.241+08:00  INFO 57469 --- [map-service] [     virtual-84] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900001222 delayMs=60000

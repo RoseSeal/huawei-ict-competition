@@ -1,0 +1,13 @@
+{
+  "model": "glm-4.5-air",
+  "continuous_simulator_started": false,
+  "advisory_attempts": 2,
+  "first_attempt": "max iterations exceeded at 4",
+  "second_attempt": "provider failed at iteration index 8 (ninth model call): Zhipu response contains no text",
+  "published": 0,
+  "provider_failed": 1,
+  "max_iterations_exceeded": 1,
+  "application_level_model_calls": 14,
+  "call_breakdown": "1 API probe + 4 first-attempt calls + 9 second-attempt calls",
+  "billing_note": "Application-level count; underlying SDK HTTP retries and billed usage were not measured."
+}

@@ -1,0 +1,16 @@
+2026-10-14T16:41:45.239+08:00  WARN 21829 --- [map-service] [     virtual-64] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory schema failure: output parser returned null
+2026-10-14T16:42:05.013+08:00  WARN 21829 --- [map-service] [     virtual-91] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory schema failure: output parser returned null
+2026-10-14T16:42:24.848+08:00  WARN 21829 --- [map-service] [     virtual-95] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory schema failure: output parser returned null
+2026-10-14T16:42:36.043+08:00  WARN 21829 --- [map-service] [     virtual-99] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory schema failure: output parser returned null
+2026-10-14T16:42:48.777+08:00  WARN 21829 --- [map-service] [    virtual-104] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory schema failure: output parser returned null
+2026-10-14T16:43:03.484+08:00  WARN 21829 --- [map-service] [    virtual-105] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory schema failure: output parser returned null
+2026-10-14T16:43:18.727+08:00  WARN 21829 --- [map-service] [    virtual-108] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory schema failure: output parser returned null
+2026-10-14T16:43:33.141+08:00  WARN 21829 --- [map-service] [    virtual-111] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory schema failure: output parser returned null
+2026-10-14T16:43:55.510+08:00  WARN 21829 --- [map-service] [    virtual-113] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory schema failure: output parser returned null
+2026-10-14T16:44:08.165+08:00  WARN 21829 --- [map-service] [    virtual-117] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory schema failure: output parser returned null
+2026-10-14T16:44:18.115+08:00  WARN 21829 --- [map-service] [    virtual-118] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory schema failure: output parser returned null
+2026-10-14T16:44:35.703+08:00  WARN 21829 --- [map-service] [    virtual-121] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory schema failure: output parser returned null
+2026-10-14T16:44:54.060+08:00  WARN 21829 --- [map-service] [    virtual-125] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory schema failure: output parser returned null
+2026-10-14T16:45:15.770+08:00  WARN 21829 --- [map-service] [    virtual-127] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory schema failure: output parser returned null
+2026-10-14T16:45:33.932+08:00  WARN 21829 --- [map-service] [    virtual-130] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory schema failure: output parser returned null
+2026-10-14T16:45:53.210+08:00  WARN 21829 --- [map-service] [    virtual-133] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory schema failure: output parser returned null

@@ -1,0 +1,332 @@
+{
+  "head_on_window": {
+    "start": "2026-10-19T07:30:14+00:00",
+    "end_including_30s_safe": "2026-10-19T07:36:17+00:00",
+    "counts": {
+      "Advisory triggered:": 6,
+      "Advisory published:": 6,
+      "Advisory provider failed": 0,
+      "schema failure": 0,
+      "Advisory discarded": 0
+    }
+  },
+  "whole_run_counts": {
+    "Advisory triggered:": 7,
+    "Advisory published:": 7,
+    "Advisory provider failed": 0,
+    "schema failure": 0,
+    "Advisory discarded": 0
+  },
+  "risk_transitions": [
+    {
+      "timestamp": "2026-10-19T07:30:14Z",
+      "id": "900001222",
+      "level": "SAFE",
+      "cpa": {
+        "dcpa_nm": 1.3338354531367735,
+        "tcpa_sec": 562.4448579680081
+      },
+      "encounter": "HEAD_ON"
+    },
+    {
+      "timestamp": "2026-10-19T07:30:14Z",
+      "id": "900002222",
+      "level": "SAFE",
+      "cpa": {
+        "dcpa_nm": 0.42131615396622507,
+        "tcpa_sec": 0.0
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:31:43Z",
+      "id": "900002222",
+      "level": "CAUTION",
+      "cpa": {
+        "dcpa_nm": 0.299366224271793,
+        "tcpa_sec": 854.4888743601065
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:32:45Z",
+      "id": "900002222",
+      "level": "WARNING",
+      "cpa": {
+        "dcpa_nm": 0.24964343023824243,
+        "tcpa_sec": 259.40482903343474
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:32:45Z",
+      "id": "900002222",
+      "level": "CAUTION",
+      "cpa": {
+        "dcpa_nm": 0.2511503711315793,
+        "tcpa_sec": 260.2684875456585
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:32:46Z",
+      "id": "900002222",
+      "level": "WARNING",
+      "cpa": {
+        "dcpa_nm": 0.24873968535335464,
+        "tcpa_sec": 258.8200785660015
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:32:46Z",
+      "id": "900002222",
+      "level": "CAUTION",
+      "cpa": {
+        "dcpa_nm": 0.2502016356836684,
+        "tcpa_sec": 259.7041836532395
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:32:47Z",
+      "id": "900002222",
+      "level": "WARNING",
+      "cpa": {
+        "dcpa_nm": 0.24770821593670012,
+        "tcpa_sec": 258.2380703843845
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:34:03Z",
+      "id": "900001222",
+      "level": "CAUTION",
+      "cpa": {
+        "dcpa_nm": 0.49799232361421925,
+        "tcpa_sec": 51.761228421448635
+      },
+      "encounter": "HEAD_ON"
+    },
+    {
+      "timestamp": "2026-10-19T07:34:56Z",
+      "id": "900001222",
+      "level": "WARNING",
+      "cpa": {
+        "dcpa_nm": 0.24951996669035292,
+        "tcpa_sec": 22.559015045650085
+      },
+      "encounter": "HEAD_ON"
+    },
+    {
+      "timestamp": "2026-10-19T07:35:32Z",
+      "id": "900001222",
+      "level": "ALARM",
+      "cpa": {
+        "dcpa_nm": 0.07566999282940419,
+        "tcpa_sec": 2.136678679850714
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:35:38Z",
+      "id": "900001222",
+      "level": "WARNING",
+      "cpa": {
+        "dcpa_nm": 0.047463997872619214,
+        "tcpa_sec": 0.0
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:35:47Z",
+      "id": "900001222",
+      "level": "SAFE",
+      "cpa": {
+        "dcpa_nm": 0.03990355641058208,
+        "tcpa_sec": 0.0
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:36:27Z",
+      "id": "900002222",
+      "level": "ALARM",
+      "cpa": {
+        "dcpa_nm": 0.03650199523168273,
+        "tcpa_sec": 134.0589123565482
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:36:27Z",
+      "id": "900002222",
+      "level": "WARNING",
+      "cpa": {
+        "dcpa_nm": 0.03800931607111746,
+        "tcpa_sec": 134.9223981970836
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:36:28Z",
+      "id": "900002222",
+      "level": "ALARM",
+      "cpa": {
+        "dcpa_nm": 0.035469858941996654,
+        "tcpa_sec": 133.47720724494238
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:36:28Z",
+      "id": "900002222",
+      "level": "WARNING",
+      "cpa": {
+        "dcpa_nm": 0.037014946828938404,
+        "tcpa_sec": 134.37883320512609
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:36:29Z",
+      "id": "900002222",
+      "level": "ALARM",
+      "cpa": {
+        "dcpa_nm": 0.034603224098113054,
+        "tcpa_sec": 132.93089548249594
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:38:23Z",
+      "id": "900002222",
+      "level": "WARNING",
+      "cpa": {
+        "dcpa_nm": 0.07542914889576711,
+        "tcpa_sec": 68.29168602864299
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:38:23Z",
+      "id": "900002222",
+      "level": "ALARM",
+      "cpa": {
+        "dcpa_nm": 0.0739216285408189,
+        "tcpa_sec": 69.15508119663093
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:38:24Z",
+      "id": "900002222",
+      "level": "WARNING",
+      "cpa": {
+        "dcpa_nm": 0.07641664711057959,
+        "tcpa_sec": 67.68969453460933
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:38:24Z",
+      "id": "900002222",
+      "level": "ALARM",
+      "cpa": {
+        "dcpa_nm": 0.07495411289459579,
+        "tcpa_sec": 68.57353426703767
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:38:25Z",
+      "id": "900002222",
+      "level": "WARNING",
+      "cpa": {
+        "dcpa_nm": 0.07741136572384347,
+        "tcpa_sec": 67.14628831933973
+      },
+      "encounter": "CROSSING"
+    },
+    {
+      "timestamp": "2026-10-19T07:39:55Z",
+      "id": "900002222",
+      "level": "SAFE",
+      "cpa": {
+        "dcpa_nm": 0.16284056554729925,
+        "tcpa_sec": 0.0
+      },
+      "encounter": "CROSSING"
+    }
+  ],
+  "samples_per_ship": {
+    "123456789": 637,
+    "900001222": 637,
+    "900002222": 637
+  },
+  "max_distance_from_verified_route_m": {
+    "123456789": 0.06499305014490288,
+    "900001222": 0.06689803830096204,
+    "900002222": 0.0662658048998322
+  },
+  "first_packets": {
+    "123456789": {
+      "MSGTIME": "2026-10-19 15:30:14",
+      "MMSI": "123456789",
+      "LAT": 30.574175,
+      "LON": 114.296169,
+      "SOG": 3.0,
+      "COG": 29.6,
+      "HEADING": 29.6
+    },
+    "900001222": {
+      "MSGTIME": "2026-10-19 15:30:14",
+      "MMSI": "900001222",
+      "LAT": 30.598696,
+      "LON": 114.311619,
+      "SOG": 3.0,
+      "COG": 209.6,
+      "HEADING": 209.6
+    },
+    "900002222": {
+      "MSGTIME": "2026-10-19 15:30:14",
+      "MMSI": "900002222",
+      "LAT": 30.581108,
+      "LON": 114.303143,
+      "SOG": 7.0,
+      "COG": 29.6,
+      "HEADING": 29.6
+    }
+  },
+  "last_packets": {
+    "123456789": {
+      "MSGTIME": "2026-10-19 15:40:53",
+      "MMSI": "123456789",
+      "LAT": 30.59843,
+      "LON": 114.312164,
+      "SOG": 0.0,
+      "COG": 29.6,
+      "HEADING": 29.6
+    },
+    "900001222": {
+      "MSGTIME": "2026-10-19 15:40:53",
+      "MMSI": "900001222",
+      "LAT": 30.574441,
+      "LON": 114.295624,
+      "SOG": 0.0,
+      "COG": 209.6,
+      "HEADING": 209.6
+    },
+    "900002222": {
+      "MSGTIME": "2026-10-19 15:40:53",
+      "MMSI": "900002222",
+      "LAT": 30.597542,
+      "LON": 114.313981,
+      "SOG": 0.0,
+      "COG": 29.6,
+      "HEADING": 29.6
+    }
+  },
+  "model": "local controlled responses; no paid calls",
+  "dedup_enabled": true
+}

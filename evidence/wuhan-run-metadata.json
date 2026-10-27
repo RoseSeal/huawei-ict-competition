@@ -1,0 +1,30 @@
+{
+  "scenario": "Wuhan Yangtze single pass",
+  "frontend_url": "http://127.0.0.1:5173/",
+  "backend_url": "http://127.0.0.1:8080",
+  "mqtt_topic": "forensics/20261019/wuhan",
+  "local_model_url": "http://127.0.0.1:18770/api/paas/v4/",
+  "dedup_enabled": true,
+  "paid_model_calls": 0,
+  "explanation_enabled_for_test": false,
+  "learned_prediction_enabled_for_test": false,
+  "route_source": {
+    "dataset": "trajectory-service/runtime/dataset/segments.parquet",
+    "seg_id": 8302,
+    "reference_start": [
+      114.293625,
+      30.575418
+    ],
+    "reference_end": [
+      114.30962,
+      30.599673
+    ]
+  },
+  "route_validation": "Full finite line overlay checked against Esri imagery; each emitted coordinate checked against its finite route. Not a surveyed navigable-water boundary.",
+  "alarm_screenshot": "Replay of unmodified recorded RISK_UPDATE at 2026-10-19T07:35:32Z; labelled on image.",
+  "simulator_completed": true,
+  "simulator_exit_code": 0,
+  "samples_per_vessel": 637,
+  "all_vessels_stopped_at_end": true,
+  "main_frontend_and_backend_left_running": true
+}

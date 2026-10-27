@@ -1,0 +1,16 @@
+{
+  "backend": {
+    "tests": 470,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "frontend": {
+    "tests": 71,
+    "failures": 0
+  },
+  "simulator": {
+    "tests": 4,
+    "failures": 0
+  }
+}

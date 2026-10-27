@@ -1,0 +1,14 @@
+{
+  "http_requests_sent": 1,
+  "model": "glm-4.5-air",
+  "usage": {
+    "completion_tokens": 8,
+    "prompt_tokens": 165,
+    "prompt_tokens_details": {
+      "cached_tokens": 43
+    },
+    "total_tokens": 173
+  },
+  "finish_reason": "stop",
+  "tool_calls": null
+}

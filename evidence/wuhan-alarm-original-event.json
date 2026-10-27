@@ -1,0 +1,247 @@
+{
+  "event_id": "22a9051d-4d86-490b-8669-c8f37367f935",
+  "risk_object_id": "ownShip-2026-10-19T07:35:32Z",
+  "timestamp": "2026-10-19T07:35:32Z",
+  "environment_state_version": 1,
+  "governance": {
+    "mode": "adaptive",
+    "trust_factor": 0.95
+  },
+  "own_ship": {
+    "id": "ownShip",
+    "position": {
+      "lon": 114.304161,
+      "lat": 30.586294
+    },
+    "dynamics": {
+      "sog": 11.5,
+      "cog": 29.6,
+      "hdg": 29.6,
+      "rot": 0.0
+    },
+    "platform_health": {
+      "status": "NORMAL",
+      "description": ""
+    },
+    "future_trajectory": {
+      "prediction_type": "linear"
+    },
+    "safety_domain": {
+      "shape_type": "ellipse",
+      "dimensions": {
+        "fore_nm": 0.19161875,
+        "aft_nm": 0.038381250000000006,
+        "port_nm": 0.07661875,
+        "stbd_nm": 0.07661875
+      }
+    }
+  },
+  "targets": [
+    {
+      "id": "900002222",
+      "tracking_status": "tracking",
+      "position": {
+        "lon": 114.309019,
+        "lat": 30.590017
+      },
+      "vector": {
+        "speed_kn": 7.0,
+        "course_deg": 29.6
+      },
+      "risk_assessment": {
+        "risk_level": "WARNING",
+        "cpa_metrics": {
+          "dcpa_nm": 0.08950335242910107,
+          "tcpa_sec": 165.22028862172093
+        },
+        "risk_score": 0.40122455900196563,
+        "risk_confidence": 0.95,
+        "graphic_cpa_line": {
+          "own_pos": [
+            114.30782019371846,
+            30.59183912127497
+          ],
+          "target_pos": [
+            114.31124642086074,
+            30.59339229121085
+          ]
+        },
+        "ozt_sector": {
+          "start_angle_deg": 17.6,
+          "end_angle_deg": 41.6,
+          "is_active": true
+        },
+        "encounter_type": "CROSSING"
+      },
+      "predicted_trajectory": {
+        "prediction_type": "cv",
+        "horizon_seconds": 120,
+        "points": [
+          {
+            "lat": 30.59029827426757,
+            "lon": 114.30920461840506,
+            "offset_seconds": 10
+          },
+          {
+            "lat": 30.590579548535143,
+            "lon": 114.30939023681013,
+            "offset_seconds": 20
+          },
+          {
+            "lat": 30.590860822802714,
+            "lon": 114.30957585521519,
+            "offset_seconds": 30
+          },
+          {
+            "lat": 30.591142097070282,
+            "lon": 114.30976147362026,
+            "offset_seconds": 40
+          },
+          {
+            "lat": 30.591423371337854,
+            "lon": 114.30994709202531,
+            "offset_seconds": 50
+          },
+          {
+            "lat": 30.591704645605425,
+            "lon": 114.31013271043037,
+            "offset_seconds": 60
+          },
+          {
+            "lat": 30.591985919872997,
+            "lon": 114.31031832883544,
+            "offset_seconds": 70
+          },
+          {
+            "lat": 30.592267194140568,
+            "lon": 114.31050394724049,
+            "offset_seconds": 80
+          },
+          {
+            "lat": 30.59254846840814,
+            "lon": 114.31068956564556,
+            "offset_seconds": 90
+          },
+          {
+            "lat": 30.59282974267571,
+            "lon": 114.31087518405062,
+            "offset_seconds": 100
+          },
+          {
+            "lat": 30.59311101694328,
+            "lon": 114.31106080245567,
+            "offset_seconds": 110
+          },
+          {
+            "lat": 30.59339229121085,
+            "lon": 114.31124642086074,
+            "offset_seconds": 120
+          }
+        ]
+      }
+    },
+    {
+      "id": "900001222",
+      "tracking_status": "tracking",
+      "position": {
+        "lon": 114.303978,
+        "lat": 30.587109
+      },
+      "vector": {
+        "speed_kn": 11.0,
+        "course_deg": 209.6
+      },
+      "risk_assessment": {
+        "risk_level": "ALARM",
+        "cpa_metrics": {
+          "dcpa_nm": 0.07566999282940419,
+          "tcpa_sec": 2.136678679850714
+        },
+        "risk_score": 0.6079021610131286,
+        "risk_confidence": 0.95,
+        "graphic_cpa_line": {
+          "own_pos": [
+            114.30446593280986,
+            30.58675609343958
+          ],
+          "target_pos": [
+            114.30368632268602,
+            30.586666997579535
+          ]
+        },
+        "ozt_sector": {
+          "start_angle_deg": 197.6,
+          "end_angle_deg": 221.6,
+          "is_active": true
+        },
+        "encounter_type": "CROSSING"
+      },
+      "predicted_trajectory": {
+        "prediction_type": "cv",
+        "horizon_seconds": 120,
+        "points": [
+          {
+            "lat": 30.586666997579535,
+            "lon": 114.30368632268602,
+            "offset_seconds": 10
+          },
+          {
+            "lat": 30.586224995159064,
+            "lon": 114.30339464537204,
+            "offset_seconds": 20
+          },
+          {
+            "lat": 30.585782992738597,
+            "lon": 114.30310296805804,
+            "offset_seconds": 30
+          },
+          {
+            "lat": 30.585340990318127,
+            "lon": 114.30281129074406,
+            "offset_seconds": 40
+          },
+          {
+            "lat": 30.58489898789766,
+            "lon": 114.30251961343008,
+            "offset_seconds": 50
+          },
+          {
+            "lat": 30.58445698547719,
+            "lon": 114.3022279361161,
+            "offset_seconds": 60
+          },
+          {
+            "lat": 30.584014983056722,
+            "lon": 114.3019362588021,
+            "offset_seconds": 70
+          },
+          {
+            "lat": 30.58357298063625,
+            "lon": 114.30164458148812,
+            "offset_seconds": 80
+          },
+          {
+            "lat": 30.583130978215785,
+            "lon": 114.30135290417414,
+            "offset_seconds": 90
+          },
+          {
+            "lat": 30.582688975795314,
+            "lon": 114.30106122686016,
+            "offset_seconds": 100
+          },
+          {
+            "lat": 30.582246973374847,
+            "lon": 114.30076954954616,
+            "offset_seconds": 110
+          },
+          {
+            "lat": 30.581804970954376,
+            "lon": 114.30047787223218,
+            "offset_seconds": 120
+          }
+        ]
+      }
+    }
+  ]
+}

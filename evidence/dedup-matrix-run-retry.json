@@ -1,0 +1,14 @@
+{
+  "dedup-off-failure": {
+    "status": "completed",
+    "http_requests": 265,
+    "dedup": false,
+    "failure_mode": true
+  },
+  "dedup-on-success": {
+    "status": "completed",
+    "http_requests": 4,
+    "dedup": true,
+    "failure_mode": false
+  }
+}

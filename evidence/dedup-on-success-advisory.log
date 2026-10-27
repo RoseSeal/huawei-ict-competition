@@ -1,0 +1,4 @@
+2026-10-16T15:56:26.989+08:00  INFO 57923 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900001222] snapshot=2
+2026-10-16T15:56:27.552+08:00  INFO 57923 --- [map-service] [     virtual-64] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory published: id=5423f1eb-b2a5-47bd-9b60-15b7a564997e supersedes=null riskLevel=WARNING
+2026-10-16T15:59:35.701+08:00  INFO 57923 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900001222] snapshot=378
+2026-10-16T15:59:36.223+08:00  INFO 57923 --- [map-service] [     virtual-73] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory published: id=b3642970-9895-4de6-af58-71359f67f3df supersedes=5423f1eb-b2a5-47bd-9b60-15b7a564997e riskLevel=ALARM

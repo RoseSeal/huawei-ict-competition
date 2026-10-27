@@ -1,0 +1,30 @@
+{
+  "model": "local-controlled responses; no upstream calls",
+  "scenario": "ais_simulator.build_routes()[:2], original 1s interval, 310 ticks",
+  "groups": {
+    "dedup-off-failure": {
+      "status": "completed",
+      "http_requests": 265,
+      "dedup": false,
+      "failure_mode": true
+    },
+    "dedup-on-success": {
+      "status": "completed",
+      "http_requests": 4,
+      "dedup": true,
+      "failure_mode": false
+    },
+    "dedup-on-failure": {
+      "status": "completed",
+      "http_requests": 5,
+      "dedup": true,
+      "failure_mode": true
+    },
+    "dedup-off-success": {
+      "status": "completed",
+      "http_requests": 530,
+      "dedup": false,
+      "failure_mode": false
+    }
+  }
+}
