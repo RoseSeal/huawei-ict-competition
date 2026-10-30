@@ -1,4 +1,4 @@
 .DS_Store
 
-# Personal, not shared
-personal/
+# Local personal materials; excluded from shared repository content.
+/personal/
