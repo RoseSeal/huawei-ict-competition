@@ -1,23 +1,17 @@
-# Huawei ICT Competition
+# 数据核对
 
-Materials for the 11th Huawei ICT Competition, China Innovation Track.
+> 依 `数据核对.png` 的要求编写。运行环境与阻塞见[本地运行记录](本地运行记录.md)，片段实测见[片段统计](片段统计.md)。
 
-| Document | Content |
-|---|---|
-| [会议文档 · 2026-10-30](会议-2026-10-30.md) | Project introduction and initial tasks |
-| [任务](task/) | Task directories and [evaluation criteria](task/评测判据.md) |
-| [选题调研](research/) | Industry problems, technology landscape and candidate directions |
-| [项目介绍](项目介绍.md) | Project summary |
-| [项目总览](overview.md) | Scope, status and open decisions |
+## 目的
 
-Implementation: [map-system](https://github.com/RoseSeal/map-system).
+判断 FVessel 能否作为 AIS 之外的数据源，用于覆盖未开启 AIS 的船舶。
 
-<details>
-<summary>Reference materials</summary>
+## 交付
 
-- [Competition rules](reference/赛事/赛事规则-2026-09-23.md) — captured on 2026-09-23; later notices take precedence.
-- [Track 1 templates](reference/赛事/模板/赛题1/)
-- [Other track templates](reference/赛事/模板/其他赛题/)
-- [Demo screenshots](evidence/武汉演示-2026-10-19/) — simulated vessel data.
+- [数据说明](数据说明.md)：回答包含哪些文件和内容、时间字段能否与 AIS 对齐、相机位置与视野、是否标注了无 AIS 的船舶、使用许可，每项附证据。
+- [片段统计](片段统计.md)：抽取一个片段，统计同一时间窗口内视频中可见的船舶数与有 AIS 的船舶数。
+- [本地运行记录](本地运行记录.md)：map-system 武汉演示一次本地运行的结果与阻塞。
 
-</details>
+## 初步结论
+
+**可以（数据格式与许可均支持），但需注意子集选择。** FVessel 的 01_Video+AIS 部分为同一相机视野内的视频与 AIS 报文配对数据，视频侧按秒标注了全部可见船舶（含未开启 AIS 的船），AIS 侧按 Unix 毫秒时间戳逐条记录报文，两者可通过"视频文件名起始时刻 + 秒偏移 ↔ AIS 时间戳"对齐；V1.0 全量 26 个视频中有 6 个的可见船舶数大于 AIS 船舶数（如 video-10 为 3/1），可直接用于覆盖无 AIS 船舶的评估。注意：本次实测下载的 Clip-10 子集（10 个片段）内可见船全部有 AIS，不能直接用于该目的，需取 V1.0 全量。详见[数据说明](数据说明.md)与[片段统计](片段统计.md)。
