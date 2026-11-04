@@ -1,7 +1,7 @@
 # FVessel 数据说明（核对稿）
 
 > 任务：判断 FVessel 能否作为 AIS 之外的数据源，用于覆盖未开启 AIS 的船舶。
-> 依据来源：[GitHub 仓库](https://github.com/gy65896/FVessel)（核对日期 2026-11-02）；标注"未确认"的项待本地下载验证后更新。
+> 依据来源：[GitHub 仓库](https://github.com/gy65896/FVessel)（核对日期 2026-11-02）；**2026-11-03 下载 Clip-10 样本包与 V1.0 完整包后完成实测核对，原"未确认"项已全部更新（见 §3.2、§3.5、§5 及[全量普查记录](本地运行记录-数据集获取与全量普查.md)）。**
 
 ## 1. 数据集概况
 
@@ -24,12 +24,13 @@ FVessel（TITS 2023 论文配套基准数据集），拍摄于**武汉长江段*
 |-camera_para.txt               [经度, 纬度, 水平朝向, 垂直朝向, 相机高度, 水平FoV, 垂直FoV, fx, fy, u0, v0]
 |-gt/
      |-Video-02_gt.mp4                  逐秒处理的标注视频
-     |-Video-02_gt_detection.txt        <second>, 0, 框坐标, conf, x, y, z
-     |-Video-02_gt_tracking.txt         <second>, <轨迹id>, 框坐标, conf, x, y, z
-     |-Video-02_gt_fusion.txt           <second>, <mmsi>, 框坐标, conf, x, y, z   ← 有AIS的船才有mmsi
+     |-Video-02_gt_detection.txt        <frame>, 框坐标, conf, cls, vis
+     |-Video-02_gt_tracking.txt         <frame>, <轨迹id>, 框坐标, conf, cls, vis
+     |-Video-02_gt_fusion.txt           <frame>, <纳秒时间>, 框坐标, conf, cls, vis
 ```
 
 **证据**：README §01_Video+AIS 文件树与字段定义。
+**⚠️ 实测勘误（2026-11-03）**：README 称 fusion 第 2 列为 mmsi——**实测不符**。真实格式为"帧号 + 纳秒时间戳，**无 id/mmsi 列**"，船只身份须按 `(frame, left, top)` 与 tracking 精确对齐（本批 10 片段匹配率 100%，方法见[片段统计脚本](片段统计.py)）。
 
 ## 3. 任务五问
 
@@ -37,11 +38,10 @@ FVessel（TITS 2023 论文配套基准数据集），拍摄于**武汉长江段*
 
 见上文 §1、§2。另有 `01_demo_transform`（AIS 坐标投影到图像的示例代码）与 `02_demo_metric`（MOT 评测代码）。
 
-### 3.2 时间字段能否与 AIS 对齐 —— 可以对齐，精度待验证
+### 3.2 时间字段能否与 AIS 对齐 —— ✅ 已实测确认（2026-11-03）
 
-- 视频时长边界写在 mp4 文件名里（精确到秒）；AIS CSV 按秒命名；每条 AIS 记录带 `Timestamp`（Unix 毫秒，如 `1652181559844`）；GT 标注以视频第 `<second>` 秒为时间轴。
-- 理论上：视频第 N 秒 ↔ 文件名起始时间 + N 秒 ↔ AIS CSV 同名秒文件。
-- **未确认**：文件名时间是北京时间还是 UTC、与 AIS `Timestamp` 的时区是否一致、有无秒级偏移——需下载一段数据实际比对后更新。
+- 视频时长边界写在 mp4 文件名里（精确到秒）；AIS CSV 按秒命名；每条 AIS 记录带 `Timestamp`（**UTC Unix 毫秒**）；GT 标注以帧号为时间轴。
+- **实测结论**（Clip-10 全部 10 片段）：AIS epoch 按 **UTC+8** 换算后与 CSV 文件名、视频文件名时间窗完全吻合，无未知时区偏移、无秒级漂移，可直接对齐。证据：[片段统计-10片段与V1.0全量.md](片段统计-10片段与V1.0全量.md) §三。
 
 ### 3.3 相机位置与视野 —— 已确认（结构），具体数值按段读取
 
@@ -49,15 +49,14 @@ FVessel（TITS 2023 论文配套基准数据集），拍摄于**武汉长江段*
 
 ### 3.4 是否标注了无 AIS 的船舶 —— 已确认，这正是本数据集的价值
 
-- `gt_tracking.txt` 给**所有可见船舶**编轨迹 id；`gt_fusion.txt` 只给**有 AIS 的船**标 MMSI。两者之差即"可见但无 AIS"的船舶。
-- README 的 V1.0 表格直接给出每段的对比，如：Video-01 共 5 艘 / 有 AIS 4 艘；**Video-10 共 3 艘 / 有 AIS 仅 1 艘**；Video-18 共 10 艘 / 有 AIS 6 艘。
+- `gt_tracking.txt` 给**所有可见船舶**编轨迹 id；`gt_fusion.txt` 只覆盖**有 AIS 的船**（无 id 列，按 bbox 对齐后计轨迹数）。两者之差即"可见但无 AIS"的船舶。
+- README 的 V1.0 表格给出每段对比；**2026-11-03 已用 V1.0 完整包 26 段全量普查实测证实**：7 段存在无 AIS 船、合计 11 艘（Video-18 最多 4 艘；Video-10 实测 3 艘可见 / 1 有 AIS / 2 无 AIS，与 README 一致）。证据：[V1.0普查-结果.csv](V1.0普查-结果.csv)。
 - 注意：MMSI 已为保护隐私替换为随机数，无法对应真实船舶身份。
 
-### 3.5 使用许可 —— 部分未确认
+### 3.5 使用许可 —— 主体已确认，一处未确认
 
-- 仓库 LICENSE 文件为 **MIT License**（Copyright (c) 2023 yuguo，已核对原文）。⚠️ MIT 是软件许可证，对**数据文件本身**的授权范围未在文中明示——**未确认**。
+- 仓库 LICENSE 文件为 **MIT License**（Copyright (c) 2023 yuguo，已核对原文）。⚠️ MIT 是软件许可证，对**数据文件本身**的授权范围未在文中明示——**未确认**（已通过 hf-mirror 获取 HF 数据卡全文，其中同样**未标注数据集专用许可**，故维持未确认，引用时注明出处即可）。
 - **V2.0 有额外限制**：2023.08.01 更新说明"需使用机构/学校邮箱申请，仅限研究用途"。
-- HuggingFace 数据卡（可能含数据集专用许可）本次核对时页面无法访问——**未确认**，待换网络或镜像重试。
 - 竞赛要求"入围总决赛须开源"，若最终材料引用 FVessel 派生数据，需同时满足上述条款并注明出处（引用格式见 README §Citation）。
 
 ## 4. 对"覆盖未开启 AIS 船舶"的初步判断
@@ -78,5 +77,6 @@ FVessel（TITS 2023 论文配套基准数据集），拍摄于**武汉长江段*
 | 相机参数格式 | 同上 §(c) camera_para.txt |
 | MIT LICENSE | https://github.com/gy65896/FVessel/blob/main/LICENSE（已读原文） |
 | V2.0 申请限制 | 同上 README §News 2023.08.01 条目 |
-| HF 数据卡与实际文件 | 未确认（页面访问失败），待核 |
-| 时间对齐实测 | 未确认，待下载片段验证 |
+| HF 数据卡与实际文件 | ✅ 已核实（2026-11-03，经 hf-mirror.com 镜像）：数据卡即仓库 README；实际文件清单经 HF API 核实为 `.gitattributes` + `README.md` + `Clip-10.zip`(2.56GB) + `FVessel_V1.0.zip`(40.9GB) + `FVessel_V2.0.zip`(23.0GB)，与 README 描述一致 |
+| 时间对齐实测 | ✅ 已实测（2026-11-03）：AIS `Timestamp` 为 UTC 毫秒，按 UTC+8 与 CSV 文件名/视频文件名时间窗完全吻合，见[片段统计-10片段与V1.0全量.md](片段统计-10片段与V1.0全量.md) §三 |
+| 无 AIS 船实证 | ✅ 已实测（2026-11-03）：26 段全量普查，7 段存在无 AIS 船共 11 艘，见[V1.0普查-结果.csv](V1.0普查-结果.csv) |
