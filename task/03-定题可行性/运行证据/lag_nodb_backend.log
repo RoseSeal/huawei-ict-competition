@@ -1,0 +1,791 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.11)
+
+2026-11-04T23:48:50.583+08:00  INFO 43794 --- [map-service] [           main] c.w.m.map_service.MapServiceApplication  : Starting MapServiceApplication using Java 21.0.11 with PID 43794 (<local path>)
+2026-11-04T23:48:50.583+08:00  INFO 43794 --- [map-service] [           main] c.w.m.map_service.MapServiceApplication  : The following 1 profile is active: "local"
+2026-11-04T23:48:50.836+08:00  INFO 43794 --- [map-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-04T23:48:50.847+08:00  INFO 43794 --- [map-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2026-11-04T23:48:51.035+08:00  INFO 43794 --- [map-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-11-04T23:48:51.042+08:00  INFO 43794 --- [map-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-04T23:48:51.042+08:00  INFO 43794 --- [map-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-11-04T23:48:51.062+08:00  INFO 43794 --- [map-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-04T23:48:51.063+08:00  INFO 43794 --- [map-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 467 ms
+2026-11-04T23:48:51.112+08:00  INFO 43794 --- [map-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-04T23:48:51.132+08:00  INFO 43794 --- [map-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.42.Final
+2026-11-04T23:48:51.135+08:00  INFO 43794 --- [map-service] [           main] o.h.spatial.integration.SpatialService   : HHH80000001: hibernate-spatial integration enabled : true
+2026-11-04T23:48:51.143+08:00  INFO 43794 --- [map-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-04T23:48:51.179+08:00  INFO 43794 --- [map-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:48:52.213+08:00  WARN 43794 --- [map-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08001
+2026-11-04T23:48:52.213+08:00 ERROR 43794 --- [map-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-11-04T23:48:52.214+08:00  WARN 43794 --- [map-service] [           main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+org.hibernate.exception.JDBCConnectionException: unable to obtain isolated JDBC connection [Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:100) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:334) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.service.ServiceRegistry.requireService(ServiceRegistry.java:68) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:52) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:136) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:247) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.spatial.contributor.ContributorResolver.resolveSpatialtypeContributorImplementor(ContributorResolver.java:52) ~[hibernate-spatial-6.6.1.Final.jar:6.6.1.Final]
+	at org.hibernate.spatial.contributor.SpatialTypeContributor.contribute(SpatialTypeContributor.java:18) ~[hibernate-spatial-6.6.1.Final.jar:6.6.1.Final]
+	at org.hibernate.boot.internal.MetadataBuilderImpl.applyTypes(MetadataBuilderImpl.java:295) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at java.base/java.util.Collections$UnmodifiableCollection.forEach(Collections.java:1117) ~[na:na]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.applyTypeContributors(EntityManagerFactoryBuilderImpl.java:1414) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.applyMetamodelBuilderSettings(EntityManagerFactoryBuilderImpl.java:1395) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.<init>(EntityManagerFactoryBuilderImpl.java:281) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.<init>(EntityManagerFactoryBuilderImpl.java:199) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:54) ~[spring-orm-6.2.16.jar:6.2.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:388) ~[spring-orm-6.2.16.jar:6.2.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.16.jar:6.2.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.16.jar:6.2.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:364) ~[spring-orm-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:974) ~[spring-context-6.2.16.jar:6.2.16]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:628) ~[spring-context-6.2.16.jar:6.2.16]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.11.jar:3.5.11]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.11.jar:3.5.11]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.11.jar:3.5.11]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.11.jar:3.5.11]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.11.jar:3.5.11]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.11.jar:3.5.11]
+	at com.whut.map.map_service.MapServiceApplication.main(MapServiceApplication.java:10) ~[classes/:na]
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:373) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.Driver.makeConnection(Driver.java:448) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.10.jar:42.7.10]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-6.3.3.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:485) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.42.Final.jar:6.6.42.Final]
+	... 43 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:694) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:751) ~[na:na]
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289) ~[postgresql-42.7.10.jar:42.7.10]
+	... 57 common frames omitted
+
+2026-11-04T23:48:52.235+08:00  WARN 43794 --- [map-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-11-04T23:48:52.242+08:00  INFO 43794 --- [map-service] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (null)']
+	Database driver: undefined/unknown
+	Database version: 12.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-04T23:48:52.250+08:00  INFO 43794 --- [map-service] [           main] org.hibernate.spatial                    : HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2026-11-04T23:48:52.321+08:00  INFO 43794 --- [map-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-04T23:48:52.328+08:00  INFO 43794 --- [map-service] [           main] org.hibernate.spatial                    : HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2026-11-04T23:48:52.373+08:00  INFO 43794 --- [map-service] [           main] org.hibernate.spatial                    : HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2026-11-04T23:48:52.429+08:00  INFO 43794 --- [map-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-04T23:48:52.430+08:00  INFO 43794 --- [map-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-04T23:48:52.485+08:00  INFO 43794 --- [map-service] [           main] c.w.m.m.l.agent.graph.MemoryGraphLoader  : COLREGS graph loaded: 16 rules, 6 actions from classpath:colregs/rules.json
+2026-11-04T23:48:52.520+08:00  INFO 43794 --- [map-service] [           main] c.w.m.m.n.route.PlannedRouteRepository   : Loaded planned route wuhan-demo-own with 4 waypoints from classpath:routes/wuhan-demo-own.route.json
+2026-11-04T23:48:52.531+08:00  INFO 43794 --- [map-service] [           main] c.w.m.m.n.notice.AtonNoticeRepository    : Loaded 61 aids to navigation (61 valid), data cutoff 2026-10-23
+2026-11-04T23:48:52.865+08:00  INFO 43794 --- [map-service] [           main] c.w.m.m.source.ais.config.MqttConfig     : MQTT client connected to broker: tcp://localhost:1883, subscribed to topic: usv/AisMessage
+2026-11-04T23:48:53.183+08:00  INFO 43794 --- [map-service] [           main] c.w.m.m.s.w.config.WeatherMqttConfig     : Weather MQTT client connected to broker: tcp://localhost:1883, subscribed to topic: usv/Weather
+2026-11-04T23:48:53.315+08:00  INFO 43794 --- [map-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-11-04T23:48:53.319+08:00  INFO 43794 --- [map-service] [           main] c.w.m.map_service.MapServiceApplication  : Started MapServiceApplication in 2.858 seconds (process running for 2.968)
+2026-11-04T23:49:00.454+08:00  INFO 43794 --- [map-service] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-04T23:49:00.454+08:00  INFO 43794 --- [map-service] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-04T23:49:00.454+08:00  INFO 43794 --- [map-service] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-11-04T23:49:02.445+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:03.451+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:03.459+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1017ms, Prep=1ms, Deriv=0ms (incr=false), Assemble=1015ms, Publish=1ms, Targets=0, Role=OWN_SHIP
+2026-11-04T23:49:03.464+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:04.469+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:04.470+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1011ms, Prep=0ms, Deriv=5ms (incr=false), Assemble=1006ms, Publish=0ms, Targets=1, Role=TARGET_SHIP
+2026-11-04T23:49:04.474+08:00  INFO 43794 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900001222] snapshot=2
+2026-11-04T23:49:04.475+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:04.482+08:00  WARN 43794 --- [map-service] [     virtual-61] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Provider resolution failed for task agent: No available provider for task agent. selected=zhipu, available=[]
+2026-11-04T23:49:04.487+08:00  WARN 43794 --- [map-service] [     virtual-61] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory provider failed: LLM_REQUEST_FAILED - No available provider for task agent. selected=zhipu, available=[]
+2026-11-04T23:49:04.488+08:00  INFO 43794 --- [map-service] [     virtual-61] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900001222 delayMs=30000
+2026-11-04T23:49:05.482+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:05.482+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:05.483+08:00  INFO 43794 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900002222, 900001222] snapshot=3
+2026-11-04T23:49:05.484+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:05.484+08:00  WARN 43794 --- [map-service] [     virtual-66] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Provider resolution failed for task agent: No available provider for task agent. selected=zhipu, available=[]
+2026-11-04T23:49:05.484+08:00  WARN 43794 --- [map-service] [     virtual-66] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory provider failed: LLM_REQUEST_FAILED - No available provider for task agent. selected=zhipu, available=[]
+2026-11-04T23:49:05.484+08:00  INFO 43794 --- [map-service] [     virtual-66] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900002222 delayMs=30000
+2026-11-04T23:49:05.485+08:00  INFO 43794 --- [map-service] [     virtual-66] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900001222 delayMs=60000
+2026-11-04T23:49:06.488+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:06.489+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=1ms, Deriv=0ms (incr=false), Assemble=1005ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:06.491+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:07.494+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:07.495+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1004ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:07.496+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:08.500+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:08.501+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1005ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:08.503+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:09.506+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:09.507+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1004ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:09.509+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:10.513+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:10.515+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:10.517+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:11.522+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:11.523+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:11.525+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:12.528+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:12.529+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1004ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:12.530+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:13.533+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:13.534+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1004ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:13.536+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:14.539+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:14.540+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1004ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:14.541+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:15.547+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:15.548+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:15.549+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:16.555+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:16.556+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:16.558+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:17.563+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:17.564+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:17.566+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:18.572+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:18.573+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1008ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:18.574+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:19.579+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:19.580+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:19.582+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:20.589+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:20.590+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:20.591+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:21.597+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:21.598+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:21.599+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:22.602+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:22.603+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1004ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:22.604+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:23.612+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:23.612+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:23.614+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:24.620+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:24.621+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:24.622+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:25.629+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:25.629+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:25.631+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:26.637+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:26.638+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:26.640+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:27.643+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:27.645+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=1ms, Deriv=0ms (incr=false), Assemble=1005ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:27.647+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:28.653+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:28.654+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1006ms, Publish=1ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:28.655+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:29.662+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:29.663+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:29.665+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:30.667+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:30.668+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1003ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:30.669+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:31.674+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:31.676+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:31.678+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:32.682+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:32.683+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1005ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:32.685+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:33.692+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:33.693+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1009ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1008ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:33.694+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:34.701+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:34.702+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:34.704+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:35.706+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:35.707+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1004ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:35.708+08:00  INFO 43794 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900002222, 900001222] snapshot=33
+2026-11-04T23:49:35.709+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:35.709+08:00  WARN 43794 --- [map-service] [     virtual-67] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Provider resolution failed for task agent: No available provider for task agent. selected=zhipu, available=[]
+2026-11-04T23:49:35.710+08:00  WARN 43794 --- [map-service] [     virtual-67] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory provider failed: LLM_REQUEST_FAILED - No available provider for task agent. selected=zhipu, available=[]
+2026-11-04T23:49:35.710+08:00  INFO 43794 --- [map-service] [     virtual-67] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900002222 delayMs=60000
+2026-11-04T23:49:35.710+08:00  INFO 43794 --- [map-service] [     virtual-67] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900001222 delayMs=120000
+2026-11-04T23:49:36.712+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:36.714+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1005ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:36.716+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:37.720+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:37.721+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1005ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:37.723+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:38.729+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:38.730+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:38.732+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:39.733+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:39.734+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1002ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:39.736+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:40.738+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:40.740+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1003ms, Publish=1ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:40.741+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:41.746+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:41.746+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1005ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:41.747+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:42.752+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:42.752+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1005ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:42.753+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:43.755+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:43.756+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1003ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:43.757+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:44.762+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:44.763+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:44.765+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:45.771+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:45.772+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:45.773+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:46.774+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:46.775+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1002ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:46.775+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:47.782+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:47.783+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:47.785+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:48.791+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:48.792+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:48.793+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:49.800+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:49.801+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:49.802+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:50.809+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:50.809+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:50.810+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:51.816+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:51.817+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:51.818+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:52.823+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:52.824+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:52.826+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:53.833+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:53.834+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1009ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:53.835+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:54.839+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:54.840+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1005ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:54.841+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:55.843+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:55.844+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1003ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:55.846+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:56.848+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:56.849+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1003ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:56.853+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:57.858+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:57.859+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=1ms, Deriv=1ms (incr=false), Assemble=1006ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:49:57.861+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:58.868+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:58.869+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:58.871+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:49:59.878+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:49:59.879+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1009ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:49:59.880+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:00.887+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:00.888+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1009ms, Prep=1ms, Deriv=0ms (incr=false), Assemble=1008ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:00.888+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:01.895+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:01.895+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:01.896+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:02.900+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:02.900+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1004ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:02.901+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:03.908+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:03.908+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:03.910+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:04.914+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:04.915+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1005ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:04.916+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:05.923+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:05.923+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:05.924+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:06.930+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:06.930+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1006ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:06.932+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:07.938+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:07.939+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:07.941+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:08.943+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:08.944+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1003ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:08.945+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:09.950+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:09.951+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1006ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:09.952+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:10.956+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:10.957+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1005ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:10.958+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:11.964+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:11.964+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:11.966+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:12.971+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:12.972+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1006ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:12.973+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:13.976+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:13.976+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1003ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:13.978+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:14.984+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:14.985+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:14.986+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:15.993+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:15.993+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:15.994+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:16.997+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:16.998+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1004ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:16.999+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:18.004+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:18.006+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:18.008+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:19.013+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:19.014+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=1ms, Deriv=0ms (incr=false), Assemble=1005ms, Publish=1ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:19.015+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:20.021+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:20.022+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:20.023+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:21.025+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:21.026+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1003ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:21.027+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:22.034+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:22.034+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:22.035+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:23.040+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:23.041+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:23.042+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:24.048+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:24.049+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:24.049+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:25.051+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:25.052+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1003ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:25.053+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:26.056+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:26.056+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1004ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:26.057+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:27.061+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:27.062+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1005ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:27.063+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:28.069+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:28.070+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=1ms, Deriv=0ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:28.072+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:29.079+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:29.080+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1009ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:29.081+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:30.086+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:30.087+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:30.088+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:31.091+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:31.092+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1004ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:31.093+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:32.100+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:32.100+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:32.101+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:33.106+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:33.106+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1005ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:33.107+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:34.113+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:34.113+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=1ms, Deriv=0ms (incr=false), Assemble=1006ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:34.114+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:35.117+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:35.117+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1003ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:35.119+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:36.125+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:36.125+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:36.126+08:00  INFO 43794 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900002222, 900001222] snapshot=93
+2026-11-04T23:50:36.126+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:36.128+08:00  WARN 43794 --- [map-service] [     virtual-68] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Provider resolution failed for task agent: No available provider for task agent. selected=zhipu, available=[]
+2026-11-04T23:50:36.129+08:00  WARN 43794 --- [map-service] [     virtual-68] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory provider failed: LLM_REQUEST_FAILED - No available provider for task agent. selected=zhipu, available=[]
+2026-11-04T23:50:36.129+08:00  INFO 43794 --- [map-service] [     virtual-68] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900002222 delayMs=120000
+2026-11-04T23:50:36.129+08:00  INFO 43794 --- [map-service] [     virtual-68] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900001222 delayMs=120000
+2026-11-04T23:50:37.133+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:37.137+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1011ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1011ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:37.138+08:00  INFO 43794 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900002222, 900001222] snapshot=94
+2026-11-04T23:50:37.138+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:37.139+08:00  WARN 43794 --- [map-service] [     virtual-70] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Provider resolution failed for task agent: No available provider for task agent. selected=zhipu, available=[]
+2026-11-04T23:50:37.139+08:00  WARN 43794 --- [map-service] [     virtual-70] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory provider failed: LLM_REQUEST_FAILED - No available provider for task agent. selected=zhipu, available=[]
+2026-11-04T23:50:37.139+08:00  INFO 43794 --- [map-service] [     virtual-70] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900002222 delayMs=30000
+2026-11-04T23:50:37.140+08:00  INFO 43794 --- [map-service] [     virtual-70] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900001222 delayMs=120000
+2026-11-04T23:50:38.145+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:38.145+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:38.145+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:39.151+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:39.152+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:39.153+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:40.160+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:40.160+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:40.161+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:41.163+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:41.163+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1002ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1002ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:41.165+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:42.171+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:42.172+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:42.173+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:43.176+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:43.176+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=1ms, Deriv=0ms (incr=false), Assemble=1003ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:43.177+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:44.180+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:44.181+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1004ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:44.181+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:45.188+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:45.188+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:45.190+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:46.197+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:46.198+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1009ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1008ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:46.201+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:47.206+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:47.206+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=1ms, Deriv=1ms (incr=true), Assemble=1005ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:47.208+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:48.211+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:48.212+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1004ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:48.213+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:49.219+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:49.219+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:49.220+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:50.222+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:50.223+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1003ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:50.224+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:51.231+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:51.232+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:51.233+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:52.239+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:52.241+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:52.242+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:53.250+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:53.250+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:53.251+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:54.258+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:54.259+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:54.260+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:55.264+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:55.264+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=1ms, Deriv=0ms (incr=false), Assemble=1004ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:55.264+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:56.270+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:56.270+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:56.271+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:57.272+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:57.272+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1002ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1001ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:57.273+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:58.276+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:58.278+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1004ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:50:58.280+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:50:59.289+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:50:59.292+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1014ms, Prep=1ms, Deriv=1ms (incr=true), Assemble=1011ms, Publish=1ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:50:59.294+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:00.299+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:00.299+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1005ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:00.301+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:01.306+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:01.307+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1006ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:01.309+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:02.311+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:02.312+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1003ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:02.317+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:03.323+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:03.324+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:03.325+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:04.331+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:04.331+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=1ms, Deriv=0ms (incr=false), Assemble=1006ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:04.332+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:05.335+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:05.335+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1003ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:05.336+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:06.342+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:06.342+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:06.343+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:07.346+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:07.346+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1003ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:07.347+08:00  INFO 43794 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900002222, 900001222] snapshot=124
+2026-11-04T23:51:07.348+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:07.350+08:00  WARN 43794 --- [map-service] [     virtual-72] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Provider resolution failed for task agent: No available provider for task agent. selected=zhipu, available=[]
+2026-11-04T23:51:07.351+08:00  WARN 43794 --- [map-service] [     virtual-72] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory provider failed: LLM_REQUEST_FAILED - No available provider for task agent. selected=zhipu, available=[]
+2026-11-04T23:51:07.352+08:00  INFO 43794 --- [map-service] [     virtual-72] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900002222 delayMs=60000
+2026-11-04T23:51:07.352+08:00  INFO 43794 --- [map-service] [     virtual-72] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900001222 delayMs=120000
+2026-11-04T23:51:08.355+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:08.355+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:08.356+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:09.358+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:09.358+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1002ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:09.359+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:10.365+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:10.365+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1006ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:10.368+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:11.374+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:11.374+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:11.375+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:12.381+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:12.381+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:12.383+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:13.388+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:13.389+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1006ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:13.390+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:14.396+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:14.397+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:14.399+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:15.405+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:15.405+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:15.407+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:16.413+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:16.414+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1008ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:16.415+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:17.421+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:17.422+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:17.423+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:18.430+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:18.430+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:18.431+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:19.438+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:19.438+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:19.440+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:20.444+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:20.444+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1005ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:20.445+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:21.447+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:21.447+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1002ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:21.448+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:22.451+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:22.452+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1004ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:22.453+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:23.460+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:23.461+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:23.461+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:24.463+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:24.463+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1002ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1002ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:24.464+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:25.466+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:25.467+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=1ms, Deriv=0ms (incr=false), Assemble=1003ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:25.467+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:26.473+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:26.473+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:26.474+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:27.480+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:27.482+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:27.484+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:28.492+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:28.492+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1009ms, Prep=1ms, Deriv=0ms (incr=false), Assemble=1008ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:28.493+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:29.500+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:29.500+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:29.501+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:30.505+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:30.506+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1004ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:30.507+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:31.513+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:31.513+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1006ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:31.515+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:32.518+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:32.519+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1005ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:32.520+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:33.522+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:33.522+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1002ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1002ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:33.523+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:34.529+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:34.529+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1006ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:34.530+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:35.536+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:35.536+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:35.537+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:36.540+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:36.541+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1004ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:36.542+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:37.547+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:37.547+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1005ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:37.548+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:38.554+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:38.555+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:38.556+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:39.562+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:39.563+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:39.564+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:40.571+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:40.571+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:40.572+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:41.576+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:41.576+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1004ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:41.577+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:42.583+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:42.584+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=1ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:42.585+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:43.591+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:43.592+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:43.593+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:44.598+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:44.599+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:44.600+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:45.607+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:45.607+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:45.608+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:46.609+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:46.610+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1002ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1002ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:46.610+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:47.613+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:47.614+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1004ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:47.615+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:48.621+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:48.621+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:48.622+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:49.624+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:49.624+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1002ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1002ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:49.625+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:50.632+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:50.637+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1012ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1011ms, Publish=1ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:50.643+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:51.650+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:51.651+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1009ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:51.652+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:52.655+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:52.656+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1004ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:52.656+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:53.663+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:53.663+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:53.664+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:54.669+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:54.670+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:54.670+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:55.673+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:55.673+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1003ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:55.674+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:56.680+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:56.680+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:56.680+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:57.686+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:57.686+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:57.687+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:58.691+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:58.692+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=1ms, Deriv=0ms (incr=false), Assemble=1005ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:51:58.692+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:51:59.698+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:51:59.699+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:51:59.699+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:00.705+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:00.705+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:00.706+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:01.715+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:01.715+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1009ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1009ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:52:01.717+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:02.725+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:02.725+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:02.727+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:03.734+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:03.735+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1009ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:03.736+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:04.740+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:04.741+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1005ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:52:04.742+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:05.748+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:05.748+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:05.750+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:06.756+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:06.757+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:06.757+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:07.763+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:07.764+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:52:07.765+08:00  INFO 43794 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900002222, 900001222] snapshot=184
+2026-11-04T23:52:07.765+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:07.768+08:00  WARN 43794 --- [map-service] [     virtual-73] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Provider resolution failed for task agent: No available provider for task agent. selected=zhipu, available=[]
+2026-11-04T23:52:07.769+08:00  WARN 43794 --- [map-service] [     virtual-73] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory provider failed: LLM_REQUEST_FAILED - No available provider for task agent. selected=zhipu, available=[]
+2026-11-04T23:52:07.769+08:00  INFO 43794 --- [map-service] [     virtual-73] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900002222 delayMs=120000
+2026-11-04T23:52:07.769+08:00  INFO 43794 --- [map-service] [     virtual-73] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900001222 delayMs=120000
+2026-11-04T23:52:08.767+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:08.768+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1003ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:08.769+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:09.771+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:09.772+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1003ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:09.773+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:10.777+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:10.778+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=1ms, Deriv=0ms (incr=false), Assemble=1005ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:52:10.779+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:11.784+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:11.784+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1005ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:11.785+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:12.788+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:12.788+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1003ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:12.789+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:13.791+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:13.792+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1003ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:52:13.793+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:14.799+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:14.800+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:14.801+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:15.809+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:15.809+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:15.811+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:16.816+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:16.816+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1006ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:52:16.817+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:17.822+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:17.823+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:17.825+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:18.831+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:18.831+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:18.833+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:19.839+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:19.840+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=1ms (incr=false), Assemble=1007ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:52:19.841+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:20.844+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:20.844+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1003ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:20.845+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:21.851+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:21.852+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:21.853+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:22.855+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:22.856+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=1ms, Deriv=0ms (incr=false), Assemble=1003ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:52:22.856+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:23.863+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:23.864+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1008ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1008ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:23.865+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:24.869+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:24.869+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1005ms, Prep=1ms, Deriv=0ms (incr=true), Assemble=1004ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:24.870+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:25.873+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:25.874+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=0ms (incr=false), Assemble=1004ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:52:25.874+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:26.877+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:26.877+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1003ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1003ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:26.878+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:27.881+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:27.884+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1006ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1006ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:27.887+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:28.894+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:28.895+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1009ms, Prep=1ms, Deriv=0ms (incr=false), Assemble=1008ms, Publish=0ms, Targets=2, Role=OWN_SHIP
+2026-11-04T23:52:28.897+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:29.899+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:29.900+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1004ms, Prep=0ms, Deriv=1ms (incr=true), Assemble=1003ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:29.900+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:30.907+08:00  WARN 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.c.s.HydrologyContextService      : Failed to resolve hydrology context: Failed to obtain JDBC Connection
+2026-11-04T23:52:30.907+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] c.w.m.m.risk.pipeline.ShipDispatcher     : Dispatcher Time: Total=1007ms, Prep=0ms, Deriv=0ms (incr=true), Assemble=1007ms, Publish=0ms, Targets=2, Role=TARGET_SHIP
+2026-11-04T23:52:30.909+08:00  INFO 43794 --- [map-service] [5a-7f02d08d370f] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T23:52:31.825+08:00  INFO 43794 --- [map-service] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-04T23:52:31.835+08:00  INFO 43794 --- [map-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-11-04T23:52:31.841+08:00  INFO 43794 --- [map-service] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
