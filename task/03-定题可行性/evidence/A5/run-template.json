@@ -1,0 +1,21 @@
+{
+  "status": "template_not_executed",
+  "protocol_date": "2026-11-09",
+  "prompt_file": "prompt-v1.txt",
+  "rule_version": "r1",
+  "source_A4": null,
+  "cases_frozen_at": null,
+  "case_ids": [],
+  "provider": null,
+  "model_identifier": null,
+  "model_version": null,
+  "temperature": null,
+  "reasoning_mode": null,
+  "tools_enabled": null,
+  "run_started_at": null,
+  "run_finished_at": null,
+  "raw_output_files": [],
+  "rule_output_file": null,
+  "review_file": null,
+  "notes": "尚未取得A4原始案例与标签；无模型调用，无模型或规则结果。null表示未记录，不表示默认参数。运行前复制为独立运行记录并填写实际配置。"
+}

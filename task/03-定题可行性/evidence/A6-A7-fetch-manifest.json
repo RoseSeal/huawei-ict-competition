@@ -1,0 +1,26 @@
+[
+  {
+    "file": "A7-cjmsa-disclaimer-body.html",
+    "url": "https://cj.msa.gov.cn/xtwj/mzsm/202409/t20240911_3274238.shtml",
+    "status": 200,
+    "bytes": 39784,
+    "sha256": "5e6a0a0f482d77e23b88ace38af1944331d895d33980c1164ca6d4f0fea39106",
+    "checked_date": "2026-11-09"
+  },
+  {
+    "file": "A6-cjmsa-home.html",
+    "url": "https://cj.msa.gov.cn/",
+    "status": 200,
+    "bytes": 124413,
+    "sha256": "ea252b5352529ce951b6d503d63d3c9f97bcc659d57af4e5d3e98d4ca394cb1b",
+    "checked_date": "2026-11-09"
+  },
+  {
+    "file": "A6-cjmsa-notices.html",
+    "url": "https://cj.msa.gov.cn/xxgk/xxgkml/hxtg/",
+    "status": 200,
+    "bytes": 48900,
+    "sha256": "4f2dc5eb671dd718e2a54f5e2b87fc494fadb6878077cb3ce300425f46b3fd73",
+    "checked_date": "2026-11-09"
+  }
+]

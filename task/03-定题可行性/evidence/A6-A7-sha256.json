@@ -1,0 +1,32 @@
+[
+  {
+    "file": "A6-cjmsa-home.html",
+    "bytes": 124413,
+    "sha256": "ea252b5352529ce951b6d503d63d3c9f97bcc659d57af4e5d3e98d4ca394cb1b"
+  },
+  {
+    "file": "A6-cjmsa-media.html",
+    "bytes": 37455,
+    "sha256": "83a4b3a84d0145d9c9ef16d546e318cd32b7a0f0e9718d854a9ff2fc8fe91245"
+  },
+  {
+    "file": "A6-cjmsa-notices.html",
+    "bytes": 48900,
+    "sha256": "4f2dc5eb671dd718e2a54f5e2b87fc494fadb6878077cb3ce300425f46b3fd73"
+  },
+  {
+    "file": "A7-cjmsa-disclaimer-body.html",
+    "bytes": 39784,
+    "sha256": "5e6a0a0f482d77e23b88ace38af1944331d895d33980c1164ca6d4f0fea39106"
+  },
+  {
+    "file": "A7-cjmsa-disclaimer.html",
+    "bytes": 128,
+    "sha256": "f254d0d1f566d54dd5e15a139b0e5f97a5f49012fb041106e18b98247fbf5ebb"
+  },
+  {
+    "file": "A6-伴航报道核验摘录.md",
+    "bytes": 2246,
+    "sha256": "203b2dc8aba07117745e50b82f81e5429616a12f87018353a8fe6dcbb585054a"
+  }
+]

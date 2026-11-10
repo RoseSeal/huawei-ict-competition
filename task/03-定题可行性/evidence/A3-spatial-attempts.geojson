@@ -1,0 +1,45 @@
+{
+  "type": "FeatureCollection",
+  "name": "A3 research candidates 2026-11-09; not navigation boundaries",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "HAN-2026-0038",
+        "source_url": "https://cj.msa.gov.cn/xxgk/xxgkml/hxtg/202611/t20261109_3620370.shtml",
+        "source_crs": "WGS84 explicitly stated",
+        "status": "candidate_only_manual_confirmation_required",
+        "issue": "Published A-B-C-D order self-intersects (BC crosses DA); candidate uses A-C-D-B. No authority correction obtained.",
+        "published_lonlat_ABCD": [[114.604567,30.554830],[114.604702,30.554736],[114.604496,30.554752],[114.604631,30.554659]],
+        "navigation_use": false
+      },
+      "geometry": {"type":"Polygon","coordinates":[[[114.604567,30.554830],[114.604496,30.554752],[114.604631,30.554659],[114.604702,30.554736],[114.604567,30.554830]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "HU-2026-1042-heavy-cargo",
+        "source_url": "https://www.msa.gov.cn/html/cnmsa/hxaq/article/2026/1cbd7be88af94f8783124295fc85a583.html",
+        "source_crs": "not stated",
+        "status": "not_exported_as_geometry_due_to_unknown_datum",
+        "converted_lonlat_source_order": [[121.71576667,31.36393333],[121.71461667,31.36336667],[121.71651667,31.36206667],[121.71720000,31.36323333]],
+        "issue": "DMS converted only; WGS84 equivalence not established. Second polygon for berth 13 not included in this attempt.",
+        "navigation_use": false
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "SU-2026-1422-inherited-by-1469-1484",
+        "source_url": "https://www.js.msa.gov.cn/art/2026/10/27/art_75_1618498.html",
+        "source_crs": "not stated",
+        "status": "unresolved_relative_boundary",
+        "source_description": "通沙汽渡南岸进出航道上下游边线内从码头门槛处向外延伸630米范围内水域",
+        "missing": "码头门槛坐标、进出航道上下游边线、向外方向以及这些要素的有效日期与坐标系",
+        "navigation_use": false
+      },
+      "geometry": null
+    }
+  ]
+}

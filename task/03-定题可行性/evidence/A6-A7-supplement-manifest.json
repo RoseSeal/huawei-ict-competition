@@ -1,0 +1,26 @@
+[
+  {
+    "file": "A6-伴航报道核验摘录.md",
+    "bytes": 2246,
+    "sha256": "203b2dc8aba07117745e50b82f81e5429616a12f87018353a8fe6dcbb585054a",
+    "checked_date": "2026-11-09",
+    "evidence_type": "必要摘录，非原始网页或APP截图",
+    "sources": [
+      {
+        "url": "https://kjj.wuhan.gov.cn/xwzx_8/kjspxw/202608/t20260825_2838194.html",
+        "http_status": 200,
+        "method": "web_fetch"
+      },
+      {
+        "url": "https://app.xinhuanet.com/news/article.html?articleId=79f2e025bb687c8a523fe048d10c7ab6",
+        "http_status": 200,
+        "method": "web_fetch"
+      },
+      {
+        "url": "http://news.cnhubei.com/content/2026-08/25/content_20155516.html",
+        "http_status": 200,
+        "method": "web_fetch"
+      }
+    ]
+  }
+]

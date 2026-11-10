@@ -1,0 +1,20 @@
+{
+  "run_type": "会话模型试验（WorkBuddy 子代理）",
+  "executed_at": "2026-11-09T15:30+08:00",
+  "protocol": "../A5-对比试验协议.md（2026-11-09 固定版，运行中未修改提示词与规则）",
+  "model_config": {
+    "provider": "WorkBuddy 会话内子代理（general-purpose）",
+    "model_identifier": "unknown（会话默认，不可独立控制）",
+    "temperature": "unknown",
+    "thinking_mode": "unknown",
+    "tools_enabled": "无",
+    "blinding": "子代理上下文为全新会话，仅含 prompt-v1 与各例 input 字段，不含 A4 标签"
+  },
+  "rule_config": {
+    "executor": "人工按 r1 规则文本逐条推演（确定性，无随机性）",
+    "deviations": "无；r1 第 4 条允许的人工几何已在输入中注明"
+  },
+  "inputs_frozen": "cases.json（input 与 label 分离；Q07/Q08 查询时刻为冻结时设定的补全项，已注明）",
+  "outputs": ["model-output.json", "rule-output.json", "review.csv"],
+  "template_status_before_run": "template_not_executed（run-template.json 保留原样，作为协议附件不覆盖）"
+}
