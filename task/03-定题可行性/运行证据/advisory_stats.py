@@ -16,6 +16,7 @@
 
 时间以首条 RISK_UPDATE 的接收时间为 +0 s。SSE 日志的接收时间按 UTC+8 解析。
 时长与帧滞后只统计含目标的帧：目标清理后补发的空帧沿用旧时间戳，不计入。
+帧间隔为相邻两帧接收时间之差；主机休眠时进程整体暂停，帧滞后不变而帧间隔变大。
 """
 import json
 import re
@@ -112,8 +113,10 @@ def main():
         return '无' if x is None else f"{x['level']} dcpa={x['dcpa']:.3f} tcpa={x['tcpa']:.0f}"
 
     live = [(w, r) for w, r, tg, _ in fr if tg]
+    max_lag = max(r - w for w, r in live)
+    max_gap = max(b[1] - a[1] for a, b in zip(live, live[1:]))
     print(f"帧数={len(fr)}（含目标的帧 {len(live)}） 时长={live[-1][1] - t0:.0f}s "
-          f"最大帧滞后={max(r - w for w, r in live):.1f}s "
+          f"最大帧滞后={max_lag:.1f}s 最大帧间隔={max_gap:.1f}s "
           f"建议={len(advs)} 错误事件={len(errs)} 触发={len(trig)}")
 
     def own_cog(t):
@@ -209,6 +212,9 @@ def main():
     # ---------- 场景 05 判定 ----------
     print("\n== 场景 05 判定 ==")
     RESP, MERGE, TOL = 30.0, 2.0, 1.0
+    valid = max_lag <= 5.0 and max_gap <= 5.0 and bool(trig)
+    print(f"\n-- 运行有效条件：最大帧滞后 {max_lag:.1f}s，最大帧间隔 {max_gap:.1f}s，触发 {len(trig)} 次"
+          f" -> {'有效' if valid else '无效，本次不计'}（滞后与间隔均不超过 5s，且有触发）")
     shown_t = []
     for i, (recv, a) in enumerate(advs):
         nxt = advs[i + 1][0] if i + 1 < len(advs) else float('inf')
@@ -263,7 +269,7 @@ def main():
     print(f" 判定：{'符合' if n_iter == 0 else '不符合'}（迭代超限次数为 0）")
 
     print("\n-- 预期 3 本船航向数值")
-    pat = re.compile(r'(?:航向|COG|cog)\s*(?:从|为|是|[=:：])?\s*(\d+(?:\.\d+)?)\s*(?:度|°)?')
+    pat = re.compile(r'(?:航向|COG|cog)\s*[(（]?\s*(?:从|为|是|[=:：])?\s*(\d+(?:\.\d+)?)\s*(?:度|°)?')
     n_val = n_bad = 0
     for i, (recv, a) in enumerate(advs):
         tr = trig.get(a.get('snapshot_version'))

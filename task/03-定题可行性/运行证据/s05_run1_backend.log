@@ -1,0 +1,228 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.11)
+
+2026-11-11T11:18:17.311+08:00  INFO 35785 --- [map-service] [           main] c.w.m.map_service.MapServiceApplication  : Starting MapServiceApplication using Java 21.0.11 with PID 35785 (<local path>)
+2026-11-11T11:18:17.312+08:00  INFO 35785 --- [map-service] [           main] c.w.m.map_service.MapServiceApplication  : The following 1 profile is active: "local"
+2026-11-11T11:18:17.560+08:00  INFO 35785 --- [map-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-11T11:18:17.572+08:00  INFO 35785 --- [map-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2026-11-11T11:18:17.761+08:00  INFO 35785 --- [map-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-11-11T11:18:17.766+08:00  INFO 35785 --- [map-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-11T11:18:17.766+08:00  INFO 35785 --- [map-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-11-11T11:18:17.789+08:00  INFO 35785 --- [map-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-11T11:18:17.790+08:00  INFO 35785 --- [map-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 465 ms
+2026-11-11T11:18:17.839+08:00  INFO 35785 --- [map-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-11T11:18:17.858+08:00  INFO 35785 --- [map-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.42.Final
+2026-11-11T11:18:17.861+08:00  INFO 35785 --- [map-service] [           main] o.h.spatial.integration.SpatialService   : HHH80000001: hibernate-spatial integration enabled : true
+2026-11-11T11:18:17.868+08:00  INFO 35785 --- [map-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-11T11:18:17.907+08:00  INFO 35785 --- [map-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-11T11:18:18.019+08:00  INFO 35785 --- [map-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@27d73d22
+2026-11-11T11:18:18.019+08:00  INFO 35785 --- [map-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-11T11:18:18.065+08:00  WARN 35785 --- [map-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-11-11T11:18:18.073+08:00  INFO 35785 --- [map-service] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-11-11T11:18:18.078+08:00  INFO 35785 --- [map-service] [           main] org.hibernate.spatial                    : HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2026-11-11T11:18:18.137+08:00  INFO 35785 --- [map-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-11T11:18:18.144+08:00  INFO 35785 --- [map-service] [           main] org.hibernate.spatial                    : HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2026-11-11T11:18:18.189+08:00  INFO 35785 --- [map-service] [           main] org.hibernate.spatial                    : HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2026-11-11T11:18:18.245+08:00  INFO 35785 --- [map-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-11T11:18:18.247+08:00  INFO 35785 --- [map-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-11T11:18:18.339+08:00  INFO 35785 --- [map-service] [           main] c.w.m.m.llm.config.GeminiConfig          : Gemini client initialized with proxy http://127.0.0.1:7897.
+2026-11-11T11:18:18.346+08:00  INFO 35785 --- [map-service] [           main] ai.z.openapi.AbstractAiClient            : ZAI Init the client: ZhipuAiClient, baseUrl: https://open.bigmodel.cn/api/paas/v4/
+2026-11-11T11:18:18.372+08:00  INFO 35785 --- [map-service] [           main] c.w.m.m.l.agent.graph.MemoryGraphLoader  : COLREGS graph loaded: 16 rules, 6 actions from classpath:colregs/rules.json
+2026-11-11T11:18:18.407+08:00  INFO 35785 --- [map-service] [           main] c.w.m.m.n.route.PlannedRouteRepository   : Loaded planned route wuhan-demo-own with 4 waypoints from classpath:routes/wuhan-demo-own.route.json
+2026-11-11T11:18:18.417+08:00  INFO 35785 --- [map-service] [           main] c.w.m.m.n.notice.AtonNoticeRepository    : Loaded 61 aids to navigation (61 valid), data cutoff 2026-10-23
+2026-11-11T11:18:18.754+08:00  INFO 35785 --- [map-service] [           main] c.w.m.m.source.ais.config.MqttConfig     : MQTT client connected to broker: tcp://localhost:1883, subscribed to topic: usv/AisMessage
+2026-11-11T11:18:19.075+08:00  INFO 35785 --- [map-service] [           main] c.w.m.m.s.w.config.WeatherMqttConfig     : Weather MQTT client connected to broker: tcp://localhost:1883, subscribed to topic: usv/Weather
+2026-11-11T11:18:19.220+08:00  INFO 35785 --- [map-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-11-11T11:18:19.223+08:00  INFO 35785 --- [map-service] [           main] c.w.m.map_service.MapServiceApplication  : Started MapServiceApplication in 2.031 seconds (process running for 2.131)
+2026-11-11T11:18:23.775+08:00  INFO 35785 --- [map-service] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-11T11:18:23.775+08:00  INFO 35785 --- [map-service] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-11T11:18:23.776+08:00  INFO 35785 --- [map-service] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-11-11T11:19:20.999+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900001222] snapshot=166
+2026-11-11T11:19:22.689+08:00 DEBUG 35785 --- [map-service] [     virtual-64] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=1 tool=get_risk_snapshot callId=call_-7086074127135538437
+2026-11-11T11:19:23.280+08:00 DEBUG 35785 --- [map-service] [     virtual-64] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=2 tool=get_top_risk_targets callId=call_-7086075226647162019
+2026-11-11T11:19:24.094+08:00 DEBUG 35785 --- [map-service] [     virtual-64] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=3 tool=get_target_detail callId=call_-7086080414967659833
+2026-11-11T11:19:25.063+08:00 DEBUG 35785 --- [map-service] [     virtual-64] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=4 tool=get_target_detail callId=call_-7086080140089746413
+2026-11-11T11:19:25.655+08:00 DEBUG 35785 --- [map-service] [     virtual-64] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=5 tool=get_own_ship_state callId=call_-7086075810762716800
+2026-11-11T11:19:26.447+08:00 DEBUG 35785 --- [map-service] [     virtual-64] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=6 tool=get_weather_context callId=call_-7086074779970566985
+2026-11-11T11:19:29.962+08:00  INFO 35785 --- [map-service] [     virtual-64] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory published: id=2e25594f-c36d-41b4-9281-6900500f0910 supersedes=null riskLevel=SAFE
+2026-11-11T11:19:54.158+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:20:14.246+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:20:23.290+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900002222, 900001222] snapshot=352
+2026-11-11T11:20:23.934+08:00 DEBUG 35785 --- [map-service] [     virtual-83] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=1 tool=get_risk_snapshot callId=call_-7086075192287426949
+2026-11-11T11:20:24.383+08:00 DEBUG 35785 --- [map-service] [     virtual-83] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=2 tool=get_top_risk_targets callId=call_-7086075638964021018
+2026-11-11T11:20:24.984+08:00 DEBUG 35785 --- [map-service] [     virtual-83] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=3 tool=get_target_detail callId=call_-7086074779970567234
+2026-11-11T11:20:26.224+08:00 DEBUG 35785 --- [map-service] [     virtual-83] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=4 tool=get_target_detail callId=call_-7086072752746004439
+2026-11-11T11:20:26.945+08:00 DEBUG 35785 --- [map-service] [     virtual-83] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=5 tool=get_own_ship_state callId=call_-7086075020488729047
+2026-11-11T11:20:27.473+08:00 DEBUG 35785 --- [map-service] [     virtual-83] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=6 tool=get_weather_context callId=call_-7086080002650795457
+2026-11-11T11:20:28.624+08:00 DEBUG 35785 --- [map-service] [     virtual-83] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=7 tool=query_regulatory_context callId=call_-7086080518046870386
+2026-11-11T11:20:29.623+08:00 DEBUG 35785 --- [map-service] [     virtual-83] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=8 tool=query_regulatory_context callId=call_-7086082236033791213
+2026-11-11T11:20:30.959+08:00 DEBUG 35785 --- [map-service] [     virtual-83] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=9 tool=evaluate_maneuver callId=call_-7086080140089745547
+2026-11-11T11:20:31.983+08:00 DEBUG 35785 --- [map-service] [     virtual-83] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=10 tool=evaluate_maneuver callId=call_-7086080414967658917
+2026-11-11T11:20:31.984+08:00  WARN 35785 --- [map-service] [     virtual-83] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory loop exceeded max iterations (10), discarding
+2026-11-11T11:20:31.985+08:00  INFO 35785 --- [map-service] [     virtual-83] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900002222 delayMs=30000
+2026-11-11T11:20:34.342+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:20:54.441+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:20:56.452+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900002222, 900001222] snapshot=451
+2026-11-11T11:20:56.453+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:20:57.169+08:00 DEBUG 35785 --- [map-service] [     virtual-88] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=1 tool=get_risk_snapshot callId=call_-7086075810762716840
+2026-11-11T11:20:57.613+08:00 DEBUG 35785 --- [map-service] [     virtual-88] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=2 tool=get_top_risk_targets callId=call_-7086082064235099090
+2026-11-11T11:20:58.150+08:00 DEBUG 35785 --- [map-service] [     virtual-88] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=3 tool=get_target_detail callId=call_-7086080105730013206
+2026-11-11T11:20:58.737+08:00 DEBUG 35785 --- [map-service] [     virtual-88] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=4 tool=get_target_detail callId=call_-7086080346248183494
+2026-11-11T11:20:59.223+08:00 DEBUG 35785 --- [map-service] [     virtual-88] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=5 tool=get_weather_context callId=call_-7086073577379720453
+2026-11-11T11:20:59.803+08:00 DEBUG 35785 --- [map-service] [     virtual-88] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=6 tool=query_regulatory_context callId=call_-7086074848690042175
+2026-11-11T11:21:00.951+08:00 DEBUG 35785 --- [map-service] [     virtual-88] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=7 tool=evaluate_maneuver callId=call_-7086080518046875436
+2026-11-11T11:21:01.708+08:00 DEBUG 35785 --- [map-service] [     virtual-88] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=8 tool=evaluate_maneuver_hydrology callId=call_-7086081858076668723
+2026-11-11T11:21:07.196+08:00  INFO 35785 --- [map-service] [     virtual-88] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory published: id=21f5543c-bea1-4a84-9b85-ab5d53be83f4 supersedes=2e25594f-c36d-41b4-9281-6900500f0910 riskLevel=WARNING
+2026-11-11T11:21:16.546+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:21:36.645+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:21:56.766+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:22:14.845+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900002222, 900001222] snapshot=685
+2026-11-11T11:22:14.847+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:22:15.433+08:00 DEBUG 35785 --- [map-service] [    virtual-102] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=1 tool=get_risk_snapshot callId=call_-7086081961155882070
+2026-11-11T11:22:15.916+08:00 DEBUG 35785 --- [map-service] [    virtual-102] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=2 tool=get_top_risk_targets callId=call_-7086080071370275650
+2026-11-11T11:22:16.626+08:00 DEBUG 35785 --- [map-service] [    virtual-102] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=3 tool=get_target_detail callId=call_-7086079418535240598
+2026-11-11T11:22:16.849+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:22:17.523+08:00 DEBUG 35785 --- [map-service] [    virtual-102] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=4 tool=get_target_detail callId=call_-7086075364086115499
+2026-11-11T11:22:18.040+08:00 DEBUG 35785 --- [map-service] [    virtual-102] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=5 tool=get_weather_context callId=call_-7086074711251090064
+2026-11-11T11:22:18.649+08:00 DEBUG 35785 --- [map-service] [    virtual-102] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=6 tool=query_regulatory_context callId=call_-7086074539452397296
+2026-11-11T11:22:19.406+08:00 DEBUG 35785 --- [map-service] [    virtual-102] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=7 tool=query_regulatory_context callId=call_-7086081445759811124
+2026-11-11T11:22:20.433+08:00 DEBUG 35785 --- [map-service] [    virtual-102] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=8 tool=evaluate_maneuver callId=call_-7086080243168962201
+2026-11-11T11:22:21.294+08:00 DEBUG 35785 --- [map-service] [    virtual-102] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=9 tool=evaluate_maneuver callId=call_-7086081823716928766
+2026-11-11T11:22:22.259+08:00 DEBUG 35785 --- [map-service] [    virtual-102] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=10 tool=evaluate_maneuver callId=call_-7086075535884810028
+2026-11-11T11:22:22.259+08:00  WARN 35785 --- [map-service] [    virtual-102] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory loop exceeded max iterations (10), discarding
+2026-11-11T11:22:22.259+08:00  INFO 35785 --- [map-service] [    virtual-102] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900001222 delayMs=30000
+2026-11-11T11:22:34.932+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:22:36.939+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:22:53.003+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900002222, 900001222] snapshot=799
+2026-11-11T11:22:54.003+08:00 DEBUG 35785 --- [map-service] [    virtual-113] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=1 tool=get_risk_snapshot callId=call_-7086082201674050097
+2026-11-11T11:22:54.473+08:00 DEBUG 35785 --- [map-service] [    virtual-113] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=2 tool=get_top_risk_targets callId=call_-7086079074937857016
+2026-11-11T11:22:55.010+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:22:55.044+08:00 DEBUG 35785 --- [map-service] [    virtual-113] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=3 tool=get_target_detail callId=call_-7086073199422602130
+2026-11-11T11:22:55.725+08:00 DEBUG 35785 --- [map-service] [    virtual-113] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=4 tool=get_target_detail callId=call_-7086076807195127211
+2026-11-11T11:22:56.474+08:00 DEBUG 35785 --- [map-service] [    virtual-113] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=5 tool=get_own_ship_state callId=call_-7086080414967657517
+2026-11-11T11:22:56.914+08:00 DEBUG 35785 --- [map-service] [    virtual-113] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=6 tool=get_weather_context callId=call_-7086075982561403792
+2026-11-11T11:22:57.022+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:22:57.526+08:00 DEBUG 35785 --- [map-service] [    virtual-113] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=7 tool=query_regulatory_context callId=call_-7086072615307045794
+2026-11-11T11:22:58.280+08:00 DEBUG 35785 --- [map-service] [    virtual-113] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=8 tool=query_regulatory_context callId=call_-7086080002650799607
+2026-11-11T11:22:59.133+08:00 DEBUG 35785 --- [map-service] [    virtual-113] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=9 tool=evaluate_maneuver callId=call_-7086081961155881378
+2026-11-11T11:22:59.910+08:00 DEBUG 35785 --- [map-service] [    virtual-113] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=10 tool=evaluate_maneuver callId=call_-7086073371221289309
+2026-11-11T11:22:59.910+08:00  WARN 35785 --- [map-service] [    virtual-113] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory loop exceeded max iterations (10), discarding
+2026-11-11T11:22:59.911+08:00  INFO 35785 --- [map-service] [    virtual-113] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900001222 delayMs=60000
+2026-11-11T11:23:07.074+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900002222, 900001222] snapshot=841
+2026-11-11T11:23:07.076+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:23:07.960+08:00 DEBUG 35785 --- [map-service] [    virtual-118] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=1 tool=get_risk_snapshot callId=call_-7086073165062862166
+2026-11-11T11:23:08.415+08:00 DEBUG 35785 --- [map-service] [    virtual-118] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=2 tool=get_top_risk_targets callId=call_-7086081961155880961
+2026-11-11T11:23:08.969+08:00 DEBUG 35785 --- [map-service] [    virtual-118] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=3 tool=get_target_detail callId=call_-7086075742043237379
+2026-11-11T11:23:09.900+08:00 DEBUG 35785 --- [map-service] [    virtual-118] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=4 tool=get_target_detail callId=call_-7086079349815770798
+2026-11-11T11:23:10.449+08:00 DEBUG 35785 --- [map-service] [    virtual-118] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=5 tool=get_own_ship_state callId=call_-7086074711251087204
+2026-11-11T11:23:11.190+08:00 DEBUG 35785 --- [map-service] [    virtual-118] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=6 tool=get_weather_context callId=call_-7086076154360098395
+2026-11-11T11:23:12.200+08:00 DEBUG 35785 --- [map-service] [    virtual-118] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=7 tool=query_regulatory_context callId=call_-7086397727151485068
+2026-11-11T11:23:13.025+08:00 DEBUG 35785 --- [map-service] [    virtual-118] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=8 tool=query_regulatory_context callId=call_-7086074711251088331
+2026-11-11T11:23:14.236+08:00 DEBUG 35785 --- [map-service] [    virtual-118] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=9 tool=evaluate_maneuver callId=call_-7086074779970567733
+2026-11-11T11:23:15.202+08:00 DEBUG 35785 --- [map-service] [    virtual-118] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=10 tool=evaluate_maneuver callId=call_-7086073439940763667
+2026-11-11T11:23:15.203+08:00  WARN 35785 --- [map-service] [    virtual-118] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory loop exceeded max iterations (10), discarding
+2026-11-11T11:23:15.203+08:00  INFO 35785 --- [map-service] [    virtual-118] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900001222 delayMs=30000
+2026-11-11T11:23:17.124+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:23:27.158+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:23:37.202+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:23:43.225+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900002222, 900001222] snapshot=949
+2026-11-11T11:23:43.227+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:23:43.966+08:00 DEBUG 35785 --- [map-service] [    virtual-123] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=1 tool=get_risk_snapshot callId=call_-7086080964723473874
+2026-11-11T11:23:44.954+08:00 DEBUG 35785 --- [map-service] [    virtual-123] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=2 tool=get_top_risk_targets callId=call_-7086080999083212718
+2026-11-11T11:23:45.541+08:00 DEBUG 35785 --- [map-service] [    virtual-123] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=3 tool=get_target_detail callId=call_-7086073233782341460
+2026-11-11T11:23:46.272+08:00 DEBUG 35785 --- [map-service] [    virtual-123] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=4 tool=get_target_detail callId=call_-7086072958904427881
+2026-11-11T11:23:46.794+08:00 DEBUG 35785 --- [map-service] [    virtual-123] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=5 tool=get_own_ship_state callId=call_-7086080449327395276
+2026-11-11T11:23:47.385+08:00 DEBUG 35785 --- [map-service] [    virtual-123] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=6 tool=get_weather_context callId=call_-7086081858076669683
+2026-11-11T11:23:48.122+08:00 DEBUG 35785 --- [map-service] [    virtual-123] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=7 tool=evaluate_maneuver_with_weather callId=call_-7086079624693673804
+2026-11-11T11:23:48.947+08:00 DEBUG 35785 --- [map-service] [    virtual-123] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=8 tool=evaluate_maneuver callId=call_-7086076291799053524
+2026-11-11T11:23:49.725+08:00 DEBUG 35785 --- [map-service] [    virtual-123] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=9 tool=evaluate_maneuver callId=call_-7086074848690037067
+2026-11-11T11:23:50.729+08:00 DEBUG 35785 --- [map-service] [    virtual-123] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=10 tool=query_regulatory_context callId=call_-7086072752745997676
+2026-11-11T11:23:50.730+08:00  WARN 35785 --- [map-service] [    virtual-123] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory loop exceeded max iterations (10), discarding
+2026-11-11T11:23:50.730+08:00  INFO 35785 --- [map-service] [    virtual-123] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900001222 delayMs=30000
+2026-11-11T11:23:57.283+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:24:17.368+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:24:37.466+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:24:38.473+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900002222] snapshot=1114
+2026-11-11T11:24:38.475+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:24:39.180+08:00 DEBUG 35785 --- [map-service] [    virtual-133] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=1 tool=get_risk_snapshot callId=call_-7086080277528702096
+2026-11-11T11:24:39.618+08:00 DEBUG 35785 --- [map-service] [    virtual-133] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=2 tool=get_top_risk_targets callId=call_-7086080037010532474
+2026-11-11T11:24:40.180+08:00 DEBUG 35785 --- [map-service] [    virtual-133] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=3 tool=get_target_detail callId=call_-7086075879482190459
+2026-11-11T11:24:40.840+08:00 DEBUG 35785 --- [map-service] [    virtual-133] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=4 tool=get_weather_context callId=call_-7086397727151483300
+2026-11-11T11:24:41.241+08:00 DEBUG 35785 --- [map-service] [    virtual-133] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=5 tool=get_own_ship_state callId=call_-7086081136522159073
+2026-11-11T11:24:42.058+08:00 DEBUG 35785 --- [map-service] [    virtual-133] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=6 tool=evaluate_maneuver_with_weather callId=call_-7086076601036695750
+2026-11-11T11:24:42.844+08:00 DEBUG 35785 --- [map-service] [    virtual-133] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=7 tool=evaluate_maneuver callId=call_-7086074161495277370
+2026-11-11T11:24:43.887+08:00 DEBUG 35785 --- [map-service] [    virtual-133] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=8 tool=evaluate_maneuver callId=call_-7086073233782337043
+2026-11-11T11:24:44.724+08:00 DEBUG 35785 --- [map-service] [    virtual-133] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=9 tool=evaluate_maneuver_hydrology callId=call_-7086079762132629853
+2026-11-11T11:24:45.504+08:00 DEBUG 35785 --- [map-service] [    virtual-133] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=10 tool=query_regulatory_context callId=call_-7086075020488736688
+2026-11-11T11:24:45.504+08:00  WARN 35785 --- [map-service] [    virtual-133] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory loop exceeded max iterations (10), discarding
+2026-11-11T11:24:45.504+08:00  INFO 35785 --- [map-service] [    virtual-133] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900002222 delayMs=30000
+2026-11-11T11:24:58.574+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:25:15.688+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900002222] snapshot=1225
+2026-11-11T11:25:18.309+08:00 DEBUG 35785 --- [map-service] [    virtual-138] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=1 tool=get_target_detail callId=call_-7086081445759807407
+2026-11-11T11:25:18.789+08:00 DEBUG 35785 --- [map-service] [    virtual-138] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=2 tool=get_risk_snapshot callId=call_-7086075604604286203
+2026-11-11T11:25:18.875+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:25:19.409+08:00 DEBUG 35785 --- [map-service] [    virtual-138] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=3 tool=get_top_risk_targets callId=call_-7086080380607915994
+2026-11-11T11:25:20.049+08:00 DEBUG 35785 --- [map-service] [    virtual-138] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=4 tool=get_target_detail callId=call_-7086076944634077685
+2026-11-11T11:25:20.677+08:00 DEBUG 35785 --- [map-service] [    virtual-138] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=5 tool=query_regulatory_context callId=call_-7086080552406612054
+2026-11-11T11:25:21.769+08:00 DEBUG 35785 --- [map-service] [    virtual-138] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=6 tool=evaluate_maneuver callId=call_-7086076944634077679
+2026-11-11T11:25:22.321+08:00 DEBUG 35785 --- [map-service] [    virtual-138] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=7 tool=get_weather_context callId=call_-7086081548839026563
+2026-11-11T11:25:22.833+08:00 DEBUG 35785 --- [map-service] [    virtual-138] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=8 tool=get_own_ship_state callId=call_-7086072718386261737
+2026-11-11T11:25:29.306+08:00  INFO 35785 --- [map-service] [    virtual-138] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory published: id=1c6f60c7-82b4-4e2c-80c6-a975dac31a7e supersedes=21f5543c-bea1-4a84-9b85-ab5d53be83f4 riskLevel=ALARM
+2026-11-11T11:35:00.585+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900002222] snapshot=1269
+2026-11-11T11:35:00.588+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:35:15.602+08:00  WARN 35785 --- [map-service] [eDelayScheduler] c.w.m.m.l.service.LlmExplanationService  : LLM call timed out for target 900002222 after 15000 ms. Check DNS/proxy/network reachability.
+2026-11-11T11:35:19.003+08:00  WARN 35785 --- [map-service] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m651ms).
+2026-11-11T11:38:13.927+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:38:15.672+08:00 DEBUG 35785 --- [map-service] [    virtual-142] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=1 tool=get_risk_snapshot callId=call_-7086079624693669918
+2026-11-11T11:38:16.452+08:00 DEBUG 35785 --- [map-service] [    virtual-142] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=2 tool=get_top_risk_targets callId=call_-7086076154360094966
+2026-11-11T11:38:17.103+08:00 DEBUG 35785 --- [map-service] [    virtual-142] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=3 tool=get_target_detail callId=call_-7086080140089747927
+2026-11-11T11:38:17.710+08:00 DEBUG 35785 --- [map-service] [    virtual-142] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=4 tool=get_own_ship_state callId=call_-7086079521614457302
+2026-11-11T11:38:18.194+08:00 DEBUG 35785 --- [map-service] [    virtual-142] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=5 tool=get_weather_context callId=call_-7086080140089750327
+2026-11-11T11:38:18.898+08:00 DEBUG 35785 --- [map-service] [    virtual-142] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=6 tool=query_regulatory_context callId=call_-7086080174449489297
+2026-11-11T11:38:19.995+08:00 DEBUG 35785 --- [map-service] [    virtual-142] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=7 tool=evaluate_maneuver callId=call_-7086072890184953376
+2026-11-11T11:38:20.882+08:00 DEBUG 35785 --- [map-service] [    virtual-142] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=8 tool=evaluate_maneuver_hydrology callId=call_-7086081926796140969
+2026-11-11T11:42:29.160+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:42:36.835+08:00  INFO 35785 --- [map-service] [    virtual-142] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory published: id=6dccf875-5627-4329-9555-85ef924ccf21 supersedes=1c6f60c7-82b4-4e2c-80c6-a975dac31a7e riskLevel=ALARM
+2026-11-11T11:42:37.481+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900002222] snapshot=1384
+2026-11-11T11:42:39.220+08:00 DEBUG 35785 --- [map-service] [    virtual-158] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=1 tool=get_target_detail callId=call_-7086079899571579124
+2026-11-11T11:42:39.712+08:00 DEBUG 35785 --- [map-service] [    virtual-158] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=2 tool=get_risk_snapshot callId=call_-7086080105730009444
+2026-11-11T11:42:40.724+08:00 DEBUG 35785 --- [map-service] [    virtual-158] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=3 tool=get_top_risk_targets callId=call_-7086072993264168966
+2026-11-11T11:42:41.503+08:00 DEBUG 35785 --- [map-service] [    virtual-158] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=4 tool=get_target_detail callId=call_-7086072993264171893
+2026-11-11T11:42:42.088+08:00 DEBUG 35785 --- [map-service] [    virtual-158] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=5 tool=get_weather_context callId=call_-7086081823716931777
+2026-11-11T11:42:42.831+08:00 DEBUG 35785 --- [map-service] [    virtual-158] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=6 tool=query_regulatory_context callId=call_-7086072580947309513
+2026-11-11T11:42:44.007+08:00 DEBUG 35785 --- [map-service] [    virtual-158] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=7 tool=evaluate_maneuver callId=call_-7086081445759807556
+2026-11-11T11:42:45.134+08:00 DEBUG 35785 --- [map-service] [    virtual-158] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=8 tool=evaluate_maneuver callId=call_-7086079246736547942
+2026-11-11T11:42:46.127+08:00  WARN 35785 --- [map-service] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m27s123ms).
+2026-11-11T11:42:46.839+08:00 DEBUG 35785 --- [map-service] [    virtual-158] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=9 tool=evaluate_maneuver callId=call_-7086081273961116040
+2026-11-11T11:42:47.802+08:00 DEBUG 35785 --- [map-service] [    virtual-158] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=10 tool=evaluate_maneuver_hydrology callId=call_-7086079727772893099
+2026-11-11T11:42:47.823+08:00  WARN 35785 --- [map-service] [    virtual-158] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory loop exceeded max iterations (10), discarding
+2026-11-11T11:42:47.823+08:00  INFO 35785 --- [map-service] [    virtual-158] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory retry deferred: target=900002222 delayMs=30000
+2026-11-11T11:42:49.721+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:52:35.665+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.a.t.SceneRiskStateTracker      : Advisory triggered: dedup=true targets=[900002222] snapshot=1458
+2026-11-11T11:52:35.665+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:52:36.736+08:00 DEBUG 35785 --- [map-service] [    virtual-160] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=1 tool=get_risk_snapshot callId=call_-7086072168630446872
+2026-11-11T11:52:37.422+08:00 DEBUG 35785 --- [map-service] [    virtual-160] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=2 tool=get_top_risk_targets callId=call_-7086074676891349798
+2026-11-11T11:52:37.986+08:00 DEBUG 35785 --- [map-service] [    virtual-160] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=3 tool=get_target_detail callId=call_-7086081205241641229
+2026-11-11T11:52:38.483+08:00 DEBUG 35785 --- [map-service] [    virtual-160] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=4 tool=get_own_ship_state callId=call_-7086074298934223494
+2026-11-11T11:52:38.939+08:00 DEBUG 35785 --- [map-service] [    virtual-160] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=5 tool=get_weather_context callId=call_-7086075364086116710
+2026-11-11T11:52:39.586+08:00 DEBUG 35785 --- [map-service] [    virtual-160] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=6 tool=query_regulatory_context callId=call_-7086075398445857543
+2026-11-11T11:52:40.507+08:00 DEBUG 35785 --- [map-service] [    virtual-160] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=7 tool=evaluate_maneuver callId=call_-7086080483687133454
+2026-11-11T11:52:41.150+08:00 DEBUG 35785 --- [map-service] [    virtual-160] c.w.m.m.llm.agent.AgentLoopOrchestrator  : Agent tool iteration=8 tool=evaluate_maneuver_hydrology callId=call_-7086079968291053758
+2026-11-11T11:52:47.716+08:00  INFO 35785 --- [map-service] [    virtual-160] c.w.m.m.l.a.advisory.AdvisoryService     : Advisory published: id=44fbe5d2-fa69-4b05-9aa6-29b7672be9d1 supersedes=6dccf875-5627-4329-9555-85ef924ccf21 riskLevel=ALARM
+2026-11-11T11:52:50.100+08:00  WARN 35785 --- [map-service] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m3s973ms).
+2026-11-11T11:52:55.781+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:53:15.943+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:53:36.098+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:53:56.242+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:54:16.400+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:54:36.560+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:54:56.692+08:00  INFO 35785 --- [map-service] [tream-publisher] c.w.m.m.l.service.LlmExplanationService  : LLM explanation triggered asynchronously for ownShip=ownShip, riskyTargets=1, provider=zhipu
+2026-11-11T11:59:51.939+08:00  WARN 35785 --- [map-service] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m31s812ms).
+2026-11-11T12:04:31.908+08:00  INFO 35785 --- [map-service] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
