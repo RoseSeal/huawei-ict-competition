@@ -2,3 +2,7 @@
 
 # Local personal materials; excluded from shared repository content.
 /personal/
+
+# Python runtime cache
+__pycache__/
+*.py[cod]
